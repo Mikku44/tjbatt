@@ -55,7 +55,7 @@ export default function Home () {
       </section>
 
       {/* Brand Logos Section */}
-      <section className='max-w-7xl mx-auto md:justify-between flex gap-4 py-10 justify-center items-center flex-wrap'>
+      <section className='max-w-7xl mx-auto px-4 md:justify-between flex gap-4 py-10 justify-center items-center flex-wrap'>
         {brands.map((brand, i) => (
           <motion.img
             key={brand.alt}
@@ -90,17 +90,37 @@ export default function Home () {
       {/* service */}
 
       <section className='w-full gap-4 px-4 max-w-7xl mx-auto mt-10'>
-          <h3 className='text-4xl'>บริการของเรา</h3>
+        <h3 className='text-4xl'>บริการของเรา</h3>
 
-          <div className="flex md:flex-row flex-col md:gap-4 gap-2 my-3">
-            <div className="rounded-full w-fit bg-black/80 text-yellow-500 px-6 py-2">ติดตั้งแบต</div>
-            <div className="rounded-full w-fit bg-black/80 text-yellow-500 px-6 py-2">ลงโปรแกรมทะเบียน</div>
-            <div className="rounded-full w-fit bg-black/80 text-yellow-500 px-6 py-2">บริการนอกสถานที่</div>
+        <div className='flex md:flex-row flex-col md:gap-4 gap-2 my-3'>
+          <div className='rounded-full w-fit bg-black/80 text-yellow-500 px-6 py-2'>
+            ติดตั้งแบต
           </div>
+          <div className='rounded-full w-fit bg-black/80 text-yellow-500 px-6 py-2'>
+            ลงโปรแกรมทะเบียน
+          </div>
+          <div className='rounded-full w-fit bg-black/80 text-yellow-500 px-6 py-2'>
+            บริการนอกสถานที่
+          </div>
+        </div>
 
-          <div className="text-black/80 md:max-w-[500px]">
-            ติดตั้งแบตเตอรี่รถยนต์ไฟฟ้า / ญี่ปุ่น พื้นที่ให้บริการ พระราม 2 และฝั่งธนฯ บริการนอกสถานที่ฟรีติดตั้งแบตเตอรี่รถยนต์ยุโรป พื้นที่ให้บริการ กทม.และปริมณฑล โปรแกรมลงทะเบียนแบตเตอรี่ลูกใหม่สำหรับรถยุโรปฟรี!!
+        <div className='text-black/80 md:max-w-[500px] my-5'>
+          ติดตั้งแบตเตอรี่รถยนต์ไฟฟ้า / ญี่ปุ่น พื้นที่ให้บริการ พระราม 2
+          และฝั่งธนฯ บริการนอกสถานที่ฟรีติดตั้งแบตเตอรี่รถยนต์ยุโรป
+          พื้นที่ให้บริการ
+          กทม.และปริมณฑลโปรแกรมลงทะเบียนแบตเตอรี่ลูกใหม่สำหรับรถยุโรปฟรี!!
+        </div>
+      </section>
+
+      <section className='w-full gap-4 px-4 max-w-7xl mx-auto '>
+        <div className='flex justify-between gap-3'>
+          <div className="rounded-full  border-black/40 border px-10 py-2 w-full text-center ">
+            <h4 className='md:text-3xl text-2xl'>รถยนต์</h4>
           </div>
+          <div className="rounded-full  border-black/40 border px-10 py-2 w-full text-center ">
+            <h4 className='md:text-3xl text-2xl'>รถไฟฟ้า</h4>
+          </div>
+        </div>
       </section>
     </main>
   )
