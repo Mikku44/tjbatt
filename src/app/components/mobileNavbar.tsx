@@ -25,7 +25,7 @@ export default function MobileNav () {
       <div
         className={`h-screen ${
           isExpand ? 'w-[300px] p-4 z-1' : 'w-0'
-        }  fixed top-0 duration-300 right-0 bg-white `}
+        }  fixed top-0 duration-300 right-0 bg-white overflow-hidden`}
       >
         <div className='flex flex-col gap-2 text-black/80'>
           {menuList.map((menu, index) => (
