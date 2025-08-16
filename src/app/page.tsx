@@ -1,5 +1,8 @@
+import { Facebook, Phone } from 'lucide-react'
 import * as motion from 'motion/react-client'
+import SVG from 'react-inlinesvg'
 import Link from 'next/link'
+import CardService from './components/cardService'
 
 export default function Home () {
   const brands = [
@@ -12,7 +15,7 @@ export default function Home () {
   ]
 
   return (
-    <main className='mx-auto w-full min-h-[300vh]'>
+    <main className='mx-auto w-full min-h-[100vh] scroll-smooth'>
       {/* Hero Section */}
       <section
         className="w-full h-screen max-h-[32rem] p-5 md:p-24 relative overflow-hidden
@@ -76,21 +79,51 @@ export default function Home () {
       {/* CTA */}
 
       <section className='w-full gap-4 px-4 mt-10 max-w-7xl mx-auto flex md:flex-row flex-col justify-between '>
-        <Link className='p-2 border border-black/70 w-full rounded-sm' href='/'>
-          Tel
+        <Link
+          className='p-4 border flex gap-2 justify-center hover:opacity-80 duration-200 items-center bg-black/80 text-white w-full rounded-sm'
+          href='tel:0994322889'
+          target='_blank'
+        >
+          <div className=''>
+            <Phone />
+          </div>
+          <div className=''>Tel +66 (0)99-492-2889</div>
         </Link>
-        <Link className='p-2 border border-black/70 w-full rounded-sm' href='/'>
-          Line
+        <Link
+          className='p-4 border flex gap-2 justify-center hover:opacity-80 duration-200 items-center bg-[#06C755] text-white w-full rounded-sm'
+          href='https://line.me/R/ti/p/@318evmbw'
+          target='_blank'
+        >
+          <div className=''>
+            {' '}
+            <SVG
+              src='/social/line.svg'
+              width={32}
+              fill='white'
+              height='auto'
+              title='line platform'
+            />
+          </div>
+          <div className=''>Line (ตั้งใจขายแบต)</div>
         </Link>
-        <Link className='p-2 border border-black/70 w-full rounded-sm' href='/'>
-          Facebook
+        <Link
+          className='p-4 border flex gap-2 justify-center hover:opacity-80 duration-200 items-center bg-[#1b77f2] text-white w-full rounded-sm'
+          href='https://www.facebook.com/profile.php?id=100063865400498'
+          target='_blank'
+        >
+          <div className=''>
+            <Facebook />
+          </div>
+          <div className=''>Facebook (ตั้งใจขายแบต)</div>
         </Link>
       </section>
 
       {/* service */}
 
       <section className='w-full gap-4 px-4 max-w-7xl mx-auto mt-10'>
-        <h3 className='text-4xl'>บริการของเรา</h3>
+        <h3 id='ourservice' className='text-4xl'>
+          บริการของเรา
+        </h3>
 
         <div className='flex md:flex-row flex-col md:gap-4 gap-2 my-3'>
           <div className='rounded-full w-fit bg-black/80 text-yellow-500 px-6 py-2'>
@@ -104,22 +137,53 @@ export default function Home () {
           </div>
         </div>
 
-        <div className='text-black/80 md:max-w-[500px] my-5'>
+        <p className='text-black/80 md:max-w-[500px] my-5'>
           ติดตั้งแบตเตอรี่รถยนต์ไฟฟ้า / ญี่ปุ่น พื้นที่ให้บริการ พระราม 2
           และฝั่งธนฯ บริการนอกสถานที่ฟรีติดตั้งแบตเตอรี่รถยนต์ยุโรป
           พื้นที่ให้บริการ
           กทม.และปริมณฑลโปรแกรมลงทะเบียนแบตเตอรี่ลูกใหม่สำหรับรถยุโรปฟรี!!
-        </div>
+        </p>
       </section>
 
-      <section className='w-full gap-4 px-4 max-w-7xl mx-auto '>
+      {/* <section className='w-full gap-4 px-4 max-w-7xl mx-auto '>
         <div className='flex justify-between gap-3'>
-          <div className="rounded-full  border-black/40 border px-10 py-2 w-full text-center ">
+          <div className='rounded-full  border-black/40 border px-10 py-2 w-full text-center '>
             <h4 className='md:text-3xl text-2xl'>รถยนต์</h4>
           </div>
-          <div className="rounded-full  border-black/40 border px-10 py-2 w-full text-center ">
+          <div className='rounded-full  border-black/40 border px-10 py-2 w-full text-center '>
             <h4 className='md:text-3xl text-2xl'>รถไฟฟ้า</h4>
           </div>
+        </div>
+      </section> */}
+      <section className='w-full gap-4 px-4 max-w-7xl mx-auto flex md:flex-row flex-col'>
+        <CardService title='รถยนต์' />
+        <CardService title='รถไฟฟ้า' />
+      </section>
+
+      <section className='w-full bg-[#0F0F0F] h-full gap-4 mt-10 text-white'>
+        <div className='max-w-7xl mx-auto py-10 px-4 '>
+          <h3 id='aboutus' className='text-4xl '>
+            เกี่ยวกับเรา
+          </h3>
+          <p className='text-xl mt-5 font-light'>
+            บริการเปลี่ยนแบตนอกสถานที่ฟรี
+          </p>
+          <p className=' mt-5 font-medium text-lg'>เปิดให้บริการทุกวัน</p>
+          <p className=' opacity-80 font-normal'>เวลา 9.00-19.00 น.</p>
+
+          <p className=' mt-5 font-medium text-lg'>สาขาที่รับบริการ</p>
+          <p className='opacity-80 font-normal'>
+            สาขาพระรามที่ 2 ซอย 62 (เคหะธน)
+          </p>
+          <p className='opacity-80 font-normal'>สาขาสุขสวัสดิ์</p>
+        </div>
+
+        <div className='w-full  h-full bg-gray-300 min-h-[500px] '>
+          <iframe
+          className='w-full h-[500px]'
+            src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3877.1199756919054!2d100.41617167485394!3d13.650465086730867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2bddcab3d7c27%3A0xe96d12c5bdbfbb0b!2z4LiV4Lix4LmJ4LiH4LmD4LiI4LiC4Liy4Lii4LmB4Lia4LiV!5e0!3m2!1sth!2sth!4v1755339992804!5m2!1sth!2sth'
+            loading='lazy'
+          ></iframe>
         </div>
       </section>
     </main>
