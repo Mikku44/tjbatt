@@ -11,12 +11,3 @@ body {
   /* font-family: Arial, Helvetica, sans-serif; */
 }
 
-
-a {
-  text-decoration: none;
-}
-
-a :hover {
-  text-decoration: line-through;
-  color: #07133d;
-}

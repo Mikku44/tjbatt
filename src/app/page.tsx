@@ -1,8 +1,9 @@
-import { Facebook, Phone } from 'lucide-react'
+import { Facebook, MapPin, Phone, Wrench } from 'lucide-react'
 import * as motion from 'motion/react-client'
 import SVG from 'react-inlinesvg'
 import Link from 'next/link'
 import CardService from './components/cardService'
+import Gallery from './components/gallery'
 
 export default function Home () {
   const brands = [
@@ -12,6 +13,24 @@ export default function Home () {
     { src: '/brand/puma.png', alt: 'puma' },
     { src: '/brand/fb.png', alt: 'fb' },
     { src: '/brand/delkor.avif', alt: 'delkor' }
+  ]
+
+  const steps = [
+    {
+      icon: <Phone className='w-10 h-10 text-[var(--primary)]' />,
+      title: 'ติดต่อเรา',
+      desc: 'โทรหรือแชทเพื่อสอบถามและเช็คราคาแบตเตอรี่ที่เหมาะกับรถของคุณ'
+    },
+    {
+      icon: <MapPin className='w-10 h-10 text-white' />,
+      title: 'เลือกสถานที่',
+      desc: 'ระบุสถานที่ที่คุณต้องการให้ไปเปลี่ยนแบต ไม่ว่าจะเป็นบ้านหรือที่ทำงาน'
+    },
+    {
+      icon: <Wrench className='w-10 h-10 text-[var(--primary)]' />,
+      title: 'ให้บริการ',
+      desc: 'ช่างผู้เชี่ยวชาญเข้าหน้างาน เปลี่ยนแบตพร้อมตรวจสอบระบบเบื้องต้น'
+    }
   ]
 
   return (
@@ -119,7 +138,6 @@ export default function Home () {
       </section>
 
       {/* service */}
-
       <section className='w-full gap-4 px-4 max-w-7xl mx-auto mt-10'>
         <h3 id='ourservice' className='text-4xl'>
           บริการของเรา
@@ -160,6 +178,60 @@ export default function Home () {
         <CardService title='รถไฟฟ้า' />
       </section>
 
+      {/* working step */}
+      <section id='ourwork' className='w-full px-4 max-w-7xl mx-auto mt-16'>
+        <div className='text-sm text-gray-700 text-center mb-2'>
+          เราโฟกัสที่ความสะดวกของลูกค้า
+        </div>
+        <h3
+          id='ourservice'
+          className='text-4xl font-bold text-center mb-12 text-gray-900'
+        >
+          ขั้นตอนการให้บริการ
+        </h3>
+
+        <div className='flex flex-col md:flex-row justify-center md:items-start items-center gap-12 relative'>
+          {steps.map((step, i) => (
+            <div
+              key={i}
+              className='grid gap-3 justify-items-center justify-center text-center max-w-[250px]'
+            >
+              <div
+                className={`rounded-xl size-[90px] ${
+                  i == 1 ? 'bg-[var(--primary)]' : 'bg-gray-50'
+                } shadow-lg p-4 flex justify-center items-center`}
+              >
+                {step.icon}
+              </div>
+              <div className='text-lg font-bold'>{step.title}</div>
+              <div className='text-sm text-black/70'>{step.desc}</div>
+            </div>
+          ))}
+
+          <div
+            className='md:flex hidden md:w-[50%] md:h-10 h-[80%] w-10 md:border-t-5 border-r-5 border-dashed md:rounded-[100%] 
+          border-[var(--primary)] absolute md:top-[20%] md:left-auto left-[40%] z-[-1]'
+          ></div>
+        </div>
+      </section>
+
+      {/* gallery */}
+      <section
+        id='gallery'
+        className='w-full gap-4 px-4 max-w-7xl mx-auto mt-10'
+      >
+         <div className='text-sm text-gray-700 text-center mb-2'>
+          ส่วนหนึ่งจากผลงานของเรา
+        </div>
+        <h3
+          className='text-4xl font-bold text-center mb-12 text-gray-900'
+        >
+          Gallery
+        </h3>
+
+        <Gallery />
+      </section>
+
       <section className='w-full bg-[#0F0F0F] h-full gap-4 mt-10 text-white'>
         <div className='max-w-7xl mx-auto py-10 px-4 '>
           <h3 id='aboutus' className='text-4xl '>
@@ -180,7 +252,7 @@ export default function Home () {
 
         <div className='w-full  h-full bg-gray-300 min-h-[500px] '>
           <iframe
-          className='w-full h-[500px]'
+            className='w-full h-[500px]'
             src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3877.1199756919054!2d100.41617167485394!3d13.650465086730867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2bddcab3d7c27%3A0xe96d12c5bdbfbb0b!2z4LiV4Lix4LmJ4LiH4LmD4LiI4LiC4Liy4Lii4LmB4Lia4LiV!5e0!3m2!1sth!2sth!4v1755339992804!5m2!1sth!2sth'
             loading='lazy'
           ></iframe>
