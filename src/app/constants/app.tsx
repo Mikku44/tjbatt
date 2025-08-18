@@ -1,9 +1,9 @@
 export const menuList = [
-  { href: '#ourservice', label: 'บริการ' },
-  { href: '#ourwork', label: 'การทำงาน' },
-  { href: '#aboutus', label: 'เกี่ยวกับเรา' },
-  { href: '#gallery', label: 'แกลลอรี่' },
-  { href: '#blog', label: 'บทความ' }
+  { href: '/#ourservice', label: 'บริการ' },
+  { href: '/#ourwork', label: 'การทำงาน' },
+  { href: '/#aboutus', label: 'เกี่ยวกับเรา' },
+  { href: '/#gallery', label: 'แกลลอรี่' },
+  { href: '/#blog', label: 'บทความ' }
 ]
 
 export const HomeTags = [
@@ -17,6 +17,27 @@ export const HomeTags = [
   '#แบตเตอรี่ราคาถูก',
   '#ร้านแบตเตอรี่ฝั่งธน'
 ]
+
+export const EuropeTags: string[] = [
+  "#vartabattery",
+  "#Auxiliarybattery",
+  "#แบตเตอรี่เบนซ์",
+  "#แบตเตอรี่บีเอ็มดับเบิลยู",
+  "#แบตเตอรี่ปอร์เซ่",
+  "#แบตเตอรี่agm",
+  "#แบตเตอรี่บีเอ็ม",
+  "#แบตเตอรี่รถยุโรป",
+  "#แบตเตอรี่bmw",
+  "#แบตเตอรี่benz",
+  "#แบตเตอรี่porsche",
+  "#แบตเตอรี่volvo",
+  "#แบตเตอรี่วอลโว่",
+  "#แบตเตอรี่มินิคูเปอร์",
+  "#ร้านแบตเตอรี่รถยุโรป",
+  "#เปลี่ยนแบตเตอรี่รถยุโรป",
+  "#เปลี่ยนแบตเตอรี่รถยุโรปนอกสถานที่",
+  "#Batterydelivery",
+];
 
 export const GalleryImage = ['/raw/images-tj/benzc220 (1).jpg']
 export const GalleryImageName = [

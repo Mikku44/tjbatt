@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 interface ITagsProps {
   tags?: string[]
 }
@@ -11,12 +13,13 @@ export default function Tags ({ tags }: Readonly<ITagsProps>) {
       <h4 className='text-lg font-semibold text-gray-900 mb-4'>ค้นหายอดนิยม</h4>
       <div className='flex flex-wrap gap-3 text-sm'>
         {tags?.map((tag: string) => (
-          <span
-            key={tag}
+          <Link
             className='px-3 py-1 rounded-full bg-gray-100 hover:bg-gray-200 text-gray-700 cursor-pointer'
+            key={tag}
+            href={`/tag/${tag.replace("#","")}`}
           >
             {tag}
-          </span>
+          </Link>
         ))}
       </div>
     </section>
