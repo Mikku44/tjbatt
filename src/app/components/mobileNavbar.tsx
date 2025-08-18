@@ -14,7 +14,7 @@ export default function MobileNav () {
   return (
     <div className='md:hidden'>
       <button onClick={handleToggle}>
-        <Menu className='text-white' />
+        <Menu className='text-[var(--primary)]' />
       </button>
       <div
         onClick={handleToggle}

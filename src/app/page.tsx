@@ -4,6 +4,9 @@ import SVG from 'react-inlinesvg'
 import Link from 'next/link'
 import CardService from './components/cardService'
 import Gallery from './components/gallery'
+import RecentArticle from './components/recentArticle'
+import Tags from './components/tags'
+import { HomeTags } from './constants/app'
 
 export default function Home () {
   const brands = [
@@ -75,6 +78,17 @@ export default function Home () {
           </motion.h2>
         </div>
       </section>
+
+      <h4 className='font-bold text-4xl pb-3 mt-10 text-[var(--primary)] text-center'>
+        ตัวแทนจำหน่ายแบตเตอรี่รถยนต์
+      </h4>
+      <p className='text-black/80 mb-5 text-lg mx-auto max-w-[800px] text-center'>
+        ตั้งใจขายแบต จำหน่ายแบตเตอรี่รถยนต์
+        รถยนต์ไฟฟ้า ทางร้านคัดสรรเแบตเตอรี่คุณภาพดีจากแบรนด์ชั้นนำ ได้แก่ GS ,
+        3K , FB , YUSAS , VARTA , AMARON , PUMA , DELKOR และอื่น ๆ
+        ที่มีมาตรฐานรองรับ บริการเปลี่ยนแบตเตอรี่นอกสถานที่ กรุงเทพฯและปริมณฑล
+        พร้อมบริการส่ง-ติดตั้ง โดยช่างมืออาชีพ
+      </p>
 
       {/* Brand Logos Section */}
       <section className='max-w-7xl mx-auto px-4 md:justify-between flex gap-4 py-10 justify-center items-center flex-wrap'>
@@ -220,17 +234,91 @@ export default function Home () {
         id='gallery'
         className='w-full gap-4 px-4 max-w-7xl mx-auto mt-10'
       >
-         <div className='text-sm text-gray-700 text-center mb-2'>
+        <div className='text-sm text-gray-700 text-center mb-2'>
           ส่วนหนึ่งจากผลงานของเรา
         </div>
-        <h3
-          className='text-4xl font-bold text-center mb-12 text-gray-900'
-        >
+        <h3 className='text-4xl font-bold text-center mb-12 text-gray-900'>
           Gallery
         </h3>
 
         <Gallery />
       </section>
+      {/* standard */}
+      <section
+        id='standard'
+        className='w-full gap-4 px-4 max-w-7xl mx-auto mt-10'
+      >
+        <div className='text-sm text-gray-700 text-center mb-2'>
+          ทุกการบริการของเรา
+        </div>
+        <h3 className='text-4xl font-bold text-center mb-12 text-gray-900'>
+          มาตรฐานบริการในการตรวจเช็คและเปลี่ยนแบตเตอรี่
+        </h3>
+
+        <ol className='space-y-6 text-gray-800 text-lg list-decimal list-inside'>
+          <li>
+            สอบถามข้อมูลและอาการของรถเบื้องต้นจากลูกค้า เพื่อหาสาเหตุว่าเกิดจาก
+            <strong>แบตเตอรี่เสื่อมสภาพ</strong> หรือเกิดจากปัญหาอื่น ๆ ของตัวรถ
+          </li>
+          <li>
+            แนะนำแบตเตอรี่ที่เหมาะสมกับ <strong>รุ่นรถ</strong> และตรงกับ
+            <strong>ลักษณะการใช้งานของลูกค้า</strong>
+          </li>
+          <li>
+            ก่อนทำการเปลี่ยนแบตเตอรี่
+            ช่างจะตรวจเช็คแบตเตอรี่ของลูกค้าก่อนทุกครั้ง
+            เพื่อยืนยันว่าแบตเตอรี่เสื่อมสภาพจริง
+          </li>
+          <li>
+            ก่อนติดตั้งแบตเตอรี่ ทางร้านจะติดสติ๊กเกอร์ที่มี{' '}
+            <strong>ชื่อร้าน / เบอร์โทร / วันที่ติดตั้ง</strong> ที่แบตเตอรี่
+            เพื่อให้ลูกค้าสามารถตรวจสอบอายุการใช้งานและติดต่อได้สะดวก
+          </li>
+          <li>
+            ขณะติดตั้งแบตเตอรี่ มีการ <strong>สำรองระบบไฟทุกครั้ง</strong>{' '}
+            เพื่อให้ระบบต่าง ๆ เช่น นาฬิกา วิทยุ ยังคงเดิม โดยไม่ต้องเซ็ตใหม่
+          </li>
+          <li>
+            บริการ <strong>สเปรย์ทำความสะอาดขั้วแบตเตอรี่</strong>{' '}
+            ตัวล็อคและที่คาดแบตเตอรี่ เพื่อลดการเกิด{' '}
+            <strong>ขี้เกลือจากน้ำกรด</strong> ซึ่งเป็นสาเหตุให้ถาดรองผุกร่อน
+            และทำให้ขั้วแบตเสื่อมได้
+          </li>
+          <li>
+            บริการตรวจเช็ค <strong>ไฟรั่ว / ไฟชาร์จ</strong>{' '}
+            ของรถหลังการติดตั้งแบตเตอรี่
+          </li>
+          <li>
+            ทีมช่างจะแนะนำวิธีการ <strong>ดูแลรักษาแบตเตอรี่</strong> ที่ถูกต้อง
+            เพื่อให้ใช้งานได้ยาวนานยิ่งขึ้น
+          </li>
+        </ol>
+
+        <p className='mt-8 text-sm text-gray-600 italic'>
+          *หมายเหตุ: อายุการใช้งานของแบตเตอรี่ขึ้นอยู่กับหลายปัจจัย เช่น
+          อายุรถยนต์, ความเสื่อมสภาพของสายไฟและชิ้นส่วนอื่น ๆ, การดูแลน้ำกลั่น,
+          และลักษณะการใช้งานรถ (เช่น รถโดยสารสาธารณะ
+          จะทำให้แบตเตอรี่เสื่อมเร็วกว่าปกติ)
+        </p>
+      </section>
+
+     
+
+      {/* Recent Article */}
+      <section id='blog' className='w-full gap-4 px-4 max-w-7xl mx-auto mt-10'>
+        <div className='text-sm text-gray-700 text-center mb-2'>
+          อ่านสิ่งที่น่าสนใจ
+        </div>
+        <h3 className='text-4xl font-bold text-center mb-12 text-gray-900'>
+          บทความล่าสุด
+        </h3>
+
+        <RecentArticle />
+      </section>
+
+
+      {/* Keywoed & tags */}
+      <Tags tags={HomeTags}></Tags>
 
       <section className='w-full bg-[#0F0F0F] h-full gap-4 mt-10 text-white'>
         <div className='max-w-7xl mx-auto py-10 px-4 '>

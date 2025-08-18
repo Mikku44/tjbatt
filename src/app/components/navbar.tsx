@@ -6,7 +6,7 @@ export default function Navbar () {
 
 
   return (
-    <header className='top-0 fixed w-screen z-99 bg-blue-50/20 backdrop-blur-sm'>
+    <header className='top-0 fixed w-screen z-[99] bg-white shadow'>
       <nav className='max-w-7xl py-1 px-4 mx-auto flex items-center justify-between'>
         <div className='flex gap-2 items-center justify-center'>
           <Link href="/">

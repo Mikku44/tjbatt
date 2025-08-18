@@ -1,0 +1,18 @@
+interface IProps {
+  params: {
+    categoryName: string;
+    blogTitle: string;
+  };
+}
+
+export default function page({ params }: IProps) {
+  const { categoryName, blogTitle } = params;
+
+  return (
+    <main className="min-h-screen max-w-7xl m-auto mt-20 px-4">
+      <h1>หน้าบล็อกโพสต์</h1>
+      <p>หมวดหมู่: {categoryName}</p>
+      <p>ชื่อเรื่องบล็อก: {blogTitle}</p>
+    </main>
+  );
+}
