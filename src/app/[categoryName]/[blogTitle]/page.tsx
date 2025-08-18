@@ -1,12 +1,12 @@
 interface IProps {
-  params: {
+  params:Promise<{
     categoryName: string;
     blogTitle: string;
-  };
+  }>;
 }
 
-export default function page({ params }: IProps) {
-  const { categoryName, blogTitle } = params;
+export default async function page({ params }: IProps) {
+  const { categoryName, blogTitle } = await params;
 
   return (
     <main className="min-h-screen max-w-7xl m-auto mt-20 px-4">
