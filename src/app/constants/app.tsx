@@ -64,7 +64,7 @@ export function galleryGenerator (limit = 5): { src: string; alt: string }[] {
 
       const pathsForThisImage = indices.map(idx => ({
         src: image.path.replace('indx', idx.toString()),
-        alt: `${image.alt} ${idx}`
+        alt: `${image.alt}`
       }))
 
       return [...accumulator, ...pathsForThisImage]
@@ -74,6 +74,35 @@ export function galleryGenerator (limit = 5): { src: string; alt: string }[] {
 
   return allImagePaths.slice(0,limit)
 }
+
+
+interface GalleryImageItem {
+  src: string;
+  alt: string;
+}
+
+interface GroupedGallery {
+  alt: string;
+  images: string[];
+}
+
+export function groupGalleryByAlt(items: GalleryImageItem[]): GroupedGallery[] {
+  const grouped: Record<string, string[]> = {};
+
+  for (const item of items) {
+    if (!grouped[item.alt]) {
+      grouped[item.alt] = [];
+    }
+    grouped[item.alt].push(item.src);
+  }
+
+  // Convert to array of objects
+  return Object.entries(grouped).map(([alt, images]) => ({
+    alt,
+    images
+  }));
+}
+
 
 export function getImageNameFromPath (path: string) {
   const result = path.split('/').at(-1) ?? ''
