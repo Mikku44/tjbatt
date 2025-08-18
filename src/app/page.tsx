@@ -188,8 +188,8 @@ export default function Home () {
         </div>
       </section> */}
       <section className='w-full gap-4 px-4 max-w-7xl mx-auto flex md:flex-row flex-col'>
-        <CardService title='รถยนต์' />
-        <CardService title='รถไฟฟ้า' />
+        <CardService title='รถยนต์' href="/engine-car" image='/raw/images-tj/showcase (1).jpg' />
+        <CardService title='รถไฟฟ้า' href="/electric-car"  image='/raw/images-tj/showcase (19).jpg'/>
       </section>
 
       {/* working step */}

@@ -17,3 +17,43 @@ export const HomeTags = [
   '#แบตเตอรี่ราคาถูก',
   '#ร้านแบตเตอรี่ฝั่งธน'
 ]
+
+export const GalleryImage = ['/raw/images-tj/benzc220 (1).jpg']
+export const GalleryImageName = [
+  { path: '/raw/images-tj/benzc220 (indx).jpg', count: 4 , alt:"เปลี่ยนแบตเตอรี่ Mercedes-Benz C220d (W205)" },
+  { path: '/raw/images-tj/benzcls (indx).jpg', count: 4 , alt:"เปลี่ยนแบตเตอรี่ Mercedes-Benz CLS 300d (W257)" },
+  { path: '/raw/images-tj/benze200 (indx).jpg', count: 2 , alt:"เปลี่ยนแบตเตอรี่ Mercedes-Benz E200 (W212) " },
+  { path: '/raw/images-tj/benzgbl (indx).jpg', count: 3 , alt:"เปลี่ยนแบตเตอรี่ Mercedes-Benz GLB200 (W247 " },
+  { path: '/raw/images-tj/benzglc (indx).jpg', count: 3 , alt:"เปลี่ยนแบตเตอรี่ Mercedes-Benz GLC250d Coupe (W253)" }
+]
+
+// Type for your gallery config
+interface GalleryImage {
+  path: string
+  count: number
+  alt: string
+}
+
+
+export function galleryGenerator (): { src: string; alt: string }[] {
+  const allImagePaths = GalleryImageName.reduce<{ src: string; alt: string }[]>(
+    (accumulator, image) => {
+      const indices = Array.from({ length: image.count }, (_, i) => i + 1)
+
+      const pathsForThisImage = indices.map(idx => ({
+        src: image.path.replace('indx', idx.toString()),
+        alt: `${image.alt} ${idx}`
+      }))
+
+      return [...accumulator, ...pathsForThisImage]
+    },
+    []
+  )
+
+  return allImagePaths
+}
+
+export function getImageNameFromPath (path: string) {
+  const result = path.split('/').at(-1) ?? ''
+  return result
+}

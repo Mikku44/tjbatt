@@ -1,28 +1,27 @@
+import { galleryGenerator } from '../constants/app'
 import CarouselMulti from './carousel'
 
 export default function Gallery () {
-  const gallery = [
-    { id: 1 },
-    { id: 2 },
-    { id: 3 },
-    { id: 4 },
-    { id: 5 },
-    { id: 6 }
-  ]
-
   return (
     <div>
       <CarouselMulti>
-        {gallery.map(image => (
+        {galleryGenerator().map(image => (
           <div
-            key={image.id}
-            className='rounded-xl overflow-hidden max-h-[300px] flex justify-center items-center'
+            key={image.src}
+            className='rounded-xl overflow-hidden max-h-[300px] flex flex-col relative justify-center items-center'
           >
+            <div className='w-full h-full absolute bg-linear-180 to-black/80 from-black/0'>
+              .
+            </div>
+            <div className='text-xl absolute bottom-0 text-white max-w-[90%] mb-4'>
+              {image.alt}
+            </div>
             <img
+              loading='lazy'
               draggable={false}
-              src='/compressed/bene200.webp'
+              src={image.src}
               className='w-full h-full object-center'
-              alt='car '
+              alt={image.alt}
             />
           </div>
         ))}
