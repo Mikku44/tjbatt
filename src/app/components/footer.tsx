@@ -4,7 +4,7 @@ import React from 'react'
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1A1A1A] w-full flex flex-col text-white">
+    <footer id="contact" className="bg-[#1A1A1A] w-full flex flex-col text-white">
       {/* Top Section */}
       <section className="px-4 max-w-7xl mx-auto grid gap-8 md:grid-cols-3 py-12">
         {/* Logo & Address */}
@@ -45,7 +45,7 @@ export default function Footer() {
             invisible072@gmail.com
           </div>
           <Link
-            href="/contact"
+            href="tel:+6699-492-2889"
             className="text-base sm:text-lg w-fit rounded-full bg-white text-[#000444] px-6 py-2 text-center font-medium hover:bg-gray-200 transition"
           >
             ติดต่อเลย

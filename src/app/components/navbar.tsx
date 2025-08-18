@@ -30,7 +30,7 @@ export default function Navbar () {
         </div>
 
         <Link
-          href={'/contact'}
+          href={'#contact'}
           className='px-6 py-2 bg-[var(--primary)] text-white md:block hidden rounded-full'
         >
           Contact us

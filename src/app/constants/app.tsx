@@ -32,10 +32,11 @@ interface GalleryImage {
   path: string
   count: number
   alt: string
+  
 }
 
 
-export function galleryGenerator (): { src: string; alt: string }[] {
+export function galleryGenerator (limit = 5): { src: string; alt: string }[] {
   const allImagePaths = GalleryImageName.reduce<{ src: string; alt: string }[]>(
     (accumulator, image) => {
       const indices = Array.from({ length: image.count }, (_, i) => i + 1)
@@ -50,7 +51,7 @@ export function galleryGenerator (): { src: string; alt: string }[] {
     []
   )
 
-  return allImagePaths
+  return allImagePaths.slice(0,limit)
 }
 
 export function getImageNameFromPath (path: string) {
