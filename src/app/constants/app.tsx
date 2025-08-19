@@ -127,6 +127,23 @@ export function galleryGenerator (limit = 5): { src: string; alt: string }[] {
 
   return allImagePaths.slice(0, limit)
 }
+export function galleryGeneratorWithPath (limit = 5): { src: string; alt: string }[] {
+  const allImagePaths = GalleryImageName.reduce<{ src: string; alt: string }[]>(
+    (accumulator, image) => {
+      const indices = Array.from({ length: image.count }, (_, i) => i + 1)
+
+      const pathsForThisImage = indices.map(idx => ({
+        src: image.path.replace('indx', idx.toString()),
+        alt: `${image.alt}`
+      }))
+
+      return [...accumulator, ...pathsForThisImage]
+    },
+    []
+  )
+
+  return allImagePaths
+}
 
 interface GalleryImageItem {
   src: string

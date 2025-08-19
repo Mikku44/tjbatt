@@ -1,4 +1,5 @@
 // app/tags/[label]/page.tsx
+import { getAllBlog } from '@/app/utils/supabase/repository/blogs'
 import { notFound } from 'next/navigation'
 
 interface ITagsProps {
@@ -7,13 +8,6 @@ interface ITagsProps {
   }>
 }
 
-// // Example fetch function for related blogs
-async function fetchBlogsByTag () {
-  return [
-    { title: 'Blog 1', href: '/blog/blog-1' },
-    { title: 'Blog 2', href: '/blog/blog-2' }
-  ]
-}
 
 export async function generateMetadata ({ params }: ITagsProps) {
   const { label } = await params
@@ -31,11 +25,13 @@ export async function generateMetadata ({ params }: ITagsProps) {
 }
 
 export default async function TagPage ({ params }: Readonly<ITagsProps>) {
-  const { label } = await  params
+  const { label } = await params
 
   if (!label) notFound()
 
-  const relatedBlogs = await fetchBlogsByTag()
+
+
+  const relatedBlogs = await getAllBlog()
 
   return (
     <main className='min-h-screen max-w-5xl mx-auto mt-20 px-4'>
@@ -44,25 +40,24 @@ export default async function TagPage ({ params }: Readonly<ITagsProps>) {
           บทความเกี่ยวกับ &quot;{decodeURI(label)}&quot;
         </h1>
         <p className='mt-4 text-gray-600 max-w-[500px] text-ellipsis overflow-hidden mx-auto'>
-          พบบทความและข้อมูลล่าสุดเกี่ยวกับ &quot;{decodeURI(label)}&quot; สำหรับผู้ใช้รถทุกคน
+          พบบทความและข้อมูลล่าสุดเกี่ยวกับ &quot;{decodeURI(label)}&quot;
+          สำหรับผู้ใช้รถทุกคน
         </p>
       </header>
 
       <section className='grid grid-cols-1 md:grid-cols-2 gap-6'>
-        {relatedBlogs.map(blog => (
-          <a
-            key={blog.href}
-            href={blog.href}
-            className='p-5 border rounded-xl hover:shadow-lg transition-shadow'
-          >
-            <h2 className='text-xl font-semibold text-gray-900'>
-              {blog.title}
-            </h2>
-            <p className='mt-2 text-gray-600 text-sm'>
-              คลิกเพื่ออ่านบทความเต็ม
-            </p>
-          </a>
-        ))}
+        <ul className='grid gap-4 md:grid-cols-2'>
+          {relatedBlogs.map(blog => (
+            <li key={blog.id} className='p-4 rounded-lg shadow bg-white'>
+              <a href={`/blog/${blog.slug}`} className='block'>
+                <h3 className='text-lg font-bold'>{blog.title}</h3>
+                <p className='text-sm text-gray-500'>
+                  {new Date(blog.published_at).toLocaleDateString('th-TH')}
+                </p>
+              </a>
+            </li>
+          ))}
+        </ul>
       </section>
     </main>
   )

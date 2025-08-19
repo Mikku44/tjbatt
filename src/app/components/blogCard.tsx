@@ -40,7 +40,7 @@ export default function BlogCard({
               key={idx}
               className="px-3 py-1 text-xs bg-blue-50 text-blue-700 rounded-full"
             >
-              #{tag}
+              {tag}
             </span>
           ))}
         </div>

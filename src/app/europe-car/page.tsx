@@ -3,7 +3,7 @@ import Tags from '../components/tags'
 import { EuropeTags, GalleryImageName } from '../constants/app'
 import CardService from '../components/cardService'
 import * as motion from 'motion/react-client'
-
+import MyGallery from '../components/imageSlider'
 
 export const metadata: Metadata = {
   title: 'TJ Batt – ตั้งใจขายแบต อัลบั้มรถยูโรป',
@@ -17,11 +17,13 @@ export default function page () {
     <div className=''>
       {/* Hero Section */}
       <section
-        className="w-full h-screen max-h-[32rem] p-5 md:p-24 relative overflow-hidden
-                 bg-cover bg-no-repeat bg-center"
+        className='w-full h-screen max-h-[32rem] p-5 md:p-24 relative overflow-hidden
+                 bg-cover bg-no-repeat bg-center'
       >
-        <img src="/raw/images-tj/benzgbl (2).jpg" alt="europe car cover"
-        className='absolute inset-0 w-screen h-full object-cover'
+        <img
+          src='/raw/images-tj/benzgbl (2).jpg'
+          alt='europe car cover'
+          className='absolute inset-0 w-screen h-full object-cover'
         />
         {/* Gradient Overlay */}
         <div className='absolute inset-0 bg-gradient-to-b from-black/0 to-black/80'></div>
@@ -78,12 +80,18 @@ export default function page () {
         >
           นี้คือส่วนหนึ่งจากรถยุโรป
         </h3>
+
+        <MyGallery />
         <section className='my-5 grid md:grid-cols-3 gap-2'>
           {GalleryImageName.map(image => (
-            <CardService image={image.path.replace("indx","1")} key={image.path} title={image.alt} />
+            <CardService
+              image={image.path.replace('indx', '1')}
+              key={image.path}
+              title={image.alt}
+            />
           ))}
         </section>
-        
+
         <Tags tags={EuropeTags}></Tags>
       </main>
     </div>
