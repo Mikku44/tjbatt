@@ -22,7 +22,7 @@ export default function CardService ({
         <div className=''>
           <h4 className='md:text-3xl text-2xl '>{title}</h4>
           <p className='text-lg font-light  opacity-80'>
-            ดูข้อมูลรุ่นรถที่เรารับบริการ
+            รถที่เข้ารับบริการติดตั้งแบตเตอรี่
           </p>
         </div>
       </div>

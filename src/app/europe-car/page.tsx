@@ -1,8 +1,9 @@
 import { Metadata } from 'next'
 import Tags from '../components/tags'
-import { EuropeTags, galleryGenerator } from '../constants/app'
+import { EuropeTags, GalleryImageName } from '../constants/app'
 import CardService from '../components/cardService'
 import * as motion from 'motion/react-client'
+
 
 export const metadata: Metadata = {
   title: 'TJ Batt – ตั้งใจขายแบต อัลบั้มรถยูโรป',
@@ -78,10 +79,11 @@ export default function page () {
           นี้คือส่วนหนึ่งจากรถยุโรป
         </h3>
         <section className='my-5 grid md:grid-cols-3 gap-2'>
-          {galleryGenerator(20).map(image => (
-            <CardService image={image.src} key={image.src} title={image.alt} />
+          {GalleryImageName.map(image => (
+            <CardService image={image.path.replace("indx","1")} key={image.path} title={image.alt} />
           ))}
         </section>
+        
         <Tags tags={EuropeTags}></Tags>
       </main>
     </div>

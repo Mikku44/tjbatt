@@ -15,7 +15,9 @@ export default function Home () {
     { src: '/brand/gs.png', alt: 'gs' },
     { src: '/brand/puma.png', alt: 'puma' },
     { src: '/brand/fb.png', alt: 'fb' },
-    { src: '/brand/delkor.avif', alt: 'delkor' }
+    { src: '/brand/delkor.avif', alt: 'delkor' },
+    { src: '/brand/yuasa.jpg', alt: 'yuasa' },
+    { src: '/brand/flamm.jpg', alt: 'flamm' }
   ]
 
   const steps = [
@@ -85,9 +87,8 @@ export default function Home () {
       <p className='text-black/80 mb-5 text-lg mx-auto max-w-[800px] text-center'>
         ตั้งใจขายแบต จำหน่ายแบตเตอรี่รถยนต์
         รถยนต์ไฟฟ้า ทางร้านคัดสรรเแบตเตอรี่คุณภาพดีจากแบรนด์ชั้นนำ ได้แก่ GS ,
-        3K , FB , YUSAS , VARTA , AMARON , PUMA , DELKOR และอื่น ๆ
-        ที่มีมาตรฐานรองรับ บริการเปลี่ยนแบตเตอรี่นอกสถานที่ กรุงเทพฯและปริมณฑล
-        พร้อมบริการส่ง-ติดตั้ง โดยช่างมืออาชีพ
+        3K , FB , YUASA , VARTA , AMARON , PUMA , DELKOR,FIAMM และอื่น ๆ
+        ที่มีมาตรฐาน บริการติดตั้งแบตเตอรี่นอกสถานที่ กรุงเทพฯและปริมณฑลติดตั้ง โดยช่างมืออาชีพ
       </p>
 
       {/* Brand Logos Section */}
@@ -115,7 +116,7 @@ export default function Home () {
         <Link
           className='p-4 border flex gap-2 justify-center hover:opacity-80 duration-200 items-center bg-black/80 text-white w-full rounded-sm'
           href='tel:0994322889'
-          target='_blank'
+           rel="noreferrer" target='_blank'
         >
           <div className=''>
             <Phone />
@@ -125,7 +126,7 @@ export default function Home () {
         <Link
           className='p-4 border flex gap-2 justify-center hover:opacity-80 duration-200 items-center bg-[#06C755] text-white w-full rounded-sm'
           href='https://line.me/R/ti/p/@318evmbw'
-          target='_blank'
+           rel="noreferrer" target='_blank'
         >
           <div className=''>
             {' '}
@@ -142,7 +143,7 @@ export default function Home () {
         <Link
           className='p-4 border flex gap-2 justify-center hover:opacity-80 duration-200 items-center bg-[#1b77f2] text-white w-full rounded-sm'
           href='https://www.facebook.com/profile.php?id=100063865400498'
-          target='_blank'
+           rel="noreferrer" target='_blank'
         >
           <div className=''>
             <Facebook />
@@ -171,7 +172,7 @@ export default function Home () {
 
         <p className='text-black/80 md:max-w-[500px] my-5'>
           ติดตั้งแบตเตอรี่รถยนต์ไฟฟ้า / ญี่ปุ่น พื้นที่ให้บริการ พระราม 2
-          และฝั่งธนฯ บริการนอกสถานที่ฟรีติดตั้งแบตเตอรี่รถยนต์ยุโรป
+          และฝั่งธนฯ บริการนอกสถานที่ฟรี<br/>ติดตั้งแบตเตอรี่รถยนต์ยุโรป
           พื้นที่ให้บริการ
           กทม.และปริมณฑลโปรแกรมลงทะเบียนแบตเตอรี่ลูกใหม่สำหรับรถยุโรปฟรี!!
         </p>
@@ -189,7 +190,7 @@ export default function Home () {
       </section> */}
       <section className='w-full gap-4 px-4 max-w-7xl mx-auto flex md:flex-row flex-col'>
         <CardService title='รถยุโรป' href="/europe-car" image='/raw/images-tj/benzgbl (2).jpg' />
-        <CardService title='รถญี่ปุ่น' href="/japanese-car"  image='/raw/images-tj/showcase (24).jpg'/>
+        <CardService title='รถไฟฟ้า' href="/electric-car"  image='/raw/images-tj/showcase (24).jpg'/>
       </section>
 
       {/* working step */}

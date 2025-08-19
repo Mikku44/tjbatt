@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import { HomeTags } from "./constants/app";
+import FloatingButton from "./components/floatingButton";
+import JsonLD from "./components/JsonLD";
 
 const noto = Noto_Sans_Thai({
   variable: "--font-noto-sans",
@@ -28,9 +30,12 @@ export default function RootLayout({
       <body
         className={` ${noto.className} antialiased`}
       >
+        
         <Navbar />
         {children}
+        <FloatingButton />
         <Footer />
+        <JsonLD />
       </body>
     </html>
   );

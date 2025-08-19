@@ -58,17 +58,17 @@ export default function Footer() {
         <div className="px-4 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-black/90 opacity-80">
           {/* Social Icons */}
           <div className="flex items-center gap-4">
-            <Link href="https://www.facebook.com/profile.php?id=100063865400498" target="_blank">
+            <Link href="https://www.facebook.com/profile.php?id=100063865400498"  rel="noreferrer" target="_blank">
               <Facebook className="size-6 sm:size-7" />
             </Link>
-            <Link href="https://line.me/R/ti/p/@318evmbw?ts=07171936&oat_content=url" target="_blank">
+            <Link href="https://line.me/R/ti/p/@318evmbw?ts=07171936&oat_content=url"  rel="noreferrer" target="_blank">
               <img
                 src="/social/line_black.svg"
                 alt="line platform logo"
                 className="h-6 sm:h-7"
               />
             </Link>
-            {/* <Link href="" target="_blank">
+            {/* <Link href=""  rel="noreferrer" target="_blank">
               <Instagram className="size-6 sm:size-7" />
             </Link> */}
           </div>
