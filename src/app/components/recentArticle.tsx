@@ -12,7 +12,7 @@ export default async function RecentArticle () {
         {relatedBlogs?.map(blog => (
           <BlogCard
             key={blog.id}
-            imageURL={ blog?.cover_image_url ||'/compressed/bene200.webp'}
+            imageURL={ blog?.cover_image_url ||'/icon.jpg'}
             href={`/blog/${blog.slug}`}
             title={blog.title}
             description={blog.title}

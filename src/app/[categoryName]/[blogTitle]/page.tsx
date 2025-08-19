@@ -2,6 +2,7 @@ import Tags from '@/app/components/tags';
 import { getBlogWithSlug } from '@/app/utils/supabase/repository/blogs';
 import { Calendar, Clock, Folder } from 'lucide-react';
 import { Metadata } from 'next';
+import React, { ReactNode } from "react";
 
 interface IProps {
   params: Promise<{
@@ -99,19 +100,23 @@ function estimateReadingTime(content: BlogContent): string {
 }
 
 // Function to render content blocks
-function renderContentBlocks(content: BlogContent): JSX.Element[] {
+function renderContentBlocks(content: BlogContent): ReactNode[] {
   if (!content || !content.blocks) {
     return [<p key="no-content">No content available.</p>];
   }
 
   return content.blocks.map((block: ContentBlock, index: number) => {
     if (isHeaderBlock(block)) {
-      const HeaderTag = `h${block.data.level}` as keyof JSX.IntrinsicElements;
-      return (
-        <HeaderTag key={index} className="text-2xl font-bold my-4">
-          {block.data.text}
-        </HeaderTag>
+      const HeaderTag = `h${block.data.level}`;
+      return React.createElement(
+        HeaderTag,
+        {
+          key: index,
+          className: "text-2xl font-bold my-4"
+        },
+        block.data.text
       );
+
     }
     
     if (isParagraphBlock(block)) {
