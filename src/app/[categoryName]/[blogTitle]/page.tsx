@@ -162,14 +162,14 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   
    const {  blogTitle } = await params;
-  const blogData : BlogPost[]= await getBlogWithSlug(blogTitle);
+  const blogData : BlogPost[]= await getBlogWithSlug(decodeURI(blogTitle));
  
 
   return {
-    title: `TJ Batt - ตั้งใจขายแบต ${blogData[0].title}`,
-    keywords : blogData[0].tags?.split(","),
+    title: `TJ Batt - ตั้งใจขายแบต ${blogData[0]?.title}`,
+    keywords : blogData[0]?.tags?.split(","),
     openGraph: {
-      images: blogData[0].title
+      images: blogData[0]?.title
     },
   }
 }

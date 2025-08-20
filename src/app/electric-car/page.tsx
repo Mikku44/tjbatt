@@ -106,8 +106,10 @@ export default function page () {
         <p className='mt-4 leading-8 text-gray-700 mb-12 text-lg px-4'>
           <b>รถไฟฟ้า (EV)</b> คืออนาคตของการเดินทาง
           ที่ขับเคลื่อนด้วยพลังงานไฟฟ้าเต็มรูปแบบ ปราศจากการปล่อยไอเสีย
-          และมีระบบเทคโนโลยีล้ำสมัย ไม่ว่าจะเป็น AION , Deepal , NETA , GWM , JAECOO , LUMIN , MG , SLEEK , XPENG , ZEEKR
-          รถไฟฟ้ามีระบบไฟฟ้าแรงดันสูงและแบตเตอรี่ 12 Volt ที่ต้องการการดูแลเฉพาะทาง
+          และมีระบบเทคโนโลยีล้ำสมัย ไม่ว่าจะเป็น AION , Deepal , NETA , GWM ,
+          JAECOO , LUMIN , MG , SLEEK , XPENG , ZEEKR ,Tesla , BYD , BMW i
+          Series , Mercedes EQ รถไฟฟ้ามีระบบไฟฟ้าแรงดันสูงและแบตเตอรี่ 12 Volt
+          ที่ต้องการการดูแลเฉพาะทาง
           <br />
           ดังนั้น การซ่อมบำรุงหรือการเปลี่ยนอะไหล่ที่เกี่ยวข้องกับระบบไฟฟ้าของรถ
           EV จึงจำเป็นต้องอาศัยผู้เชี่ยวชาญและอุปกรณ์มาตรฐาน
@@ -146,7 +148,7 @@ export default function page () {
                     className='relative aspect-[4/3] overflow-hidden rounded-xl group'
                   >
                     <img
-                    loading='lazy'
+                      loading='lazy'
                       src={item.src}
                       alt={item.alt}
                       className='w-full h-full object-cover transition-transform duration-300 group-hover:scale-110'
