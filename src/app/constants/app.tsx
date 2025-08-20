@@ -3,8 +3,21 @@ export const menuList = [
   { href: '/#ourwork', label: 'การทำงาน' },
   { href: '/#aboutus', label: 'เกี่ยวกับเรา' },
   { href: '/#gallery', label: 'แกลลอรี่' },
+  { href: '/europe-car', label: 'บริการรถยุโรป' },
+  { href: '/electric-car', label: 'บริการรถไฟฟ้า' },
   { href: '/#blog', label: 'บทความ' }
 ]
+
+export const brands = [
+    { src: '/brand/varta.jpg', alt: 'varta battery' },
+    { src: '/brand/3k.png', alt: '3k' },
+    { src: '/brand/gs.png', alt: 'gs' },
+    { src: '/brand/puma.png', alt: 'puma' },
+    { src: '/brand/fb.png', alt: 'fb' },
+    { src: '/brand/delkor.avif', alt: 'delkor' },
+    { src: '/brand/yuasa.jpg', alt: 'yuasa' },
+    { src: '/brand/flamm.jpg', alt: 'flamm' }
+  ]
 
 export const HomeTags = [
   '#แบตเตอรี่รถยนต์',
@@ -42,6 +55,29 @@ export const EuropeTags: string[] = [
   '#แบตเตอรี่สัญชาติเยอรมัน',
   '#กำเนิดขุมพลังระดับโลก'
 ]
+export const EVTags: string[] = [
+  '#แบตเตอรี่รถไฟฟ้า',
+  '#แบตเตอรี่ev',
+  '#เปลี่ยนแบตเตอรี่รถไฟฟ้า',
+  '#บริการรถev',
+  '#evbattery',
+  '#evcar',
+  '#teslabattery',
+  '#bydbattery',
+  '#bmwi',
+  '#mercedeseq',
+  '#volvorecharge',
+  '#รถยนต์ไฟฟ้า',
+  '#รถev',
+  '#แบตเตอรี่ลิเธียม',
+  '#ชาร์จรถไฟฟ้า',
+  '#บริการรถไฟฟ้า',
+  '#เปลี่ยนแบตevนอกสถานที่',
+  '#แบตเตอรี่สำรองev',
+  '#batterydelivery',
+  '#evthailand'
+]
+
 
 export const GalleryImage = ['/raw/images-tj/benzc220 (1).jpg']
 export const GalleryImageName = [
@@ -100,7 +136,11 @@ export const GalleryImageName = [
     count: 3,
     alt: 'เปลี่ยนแบตเตอรี่ Porsche Cayenne Hybrid '
   },
-
+  {
+    path: '/raw/images-tj/showcase (indx).jpg',
+    count: 25,
+    alt: 'เปลี่ยนแบตเตอรี่ รถไฟฟ้า (EV)'
+  }
 ]
 
 // Type for your gallery config
@@ -127,22 +167,20 @@ export function galleryGenerator (limit = 5): { src: string; alt: string }[] {
 
   return allImagePaths.slice(0, limit)
 }
-export function galleryGeneratorWithPath (limit = 5): { src: string; alt: string }[] {
-  const allImagePaths = GalleryImageName.reduce<{ src: string; alt: string }[]>(
-    (accumulator, image) => {
-      const indices = Array.from({ length: image.count }, (_, i) => i + 1)
 
-      const pathsForThisImage = indices.map(idx => ({
-        src: image.path.replace('indx', idx.toString()),
-        alt: `${image.alt}`
-      }))
+export function galleryGeneratorWithPath (image: {
+  path: string
+  alt: string
+  count: number
+}): { src: string; alt: string }[] {
+  const indices = Array.from({ length: image.count }, (_, i) => i + 1)
 
-      return [...accumulator, ...pathsForThisImage]
-    },
-    []
-  )
+  const pathsForThisImage = indices.map(idx => ({
+    src: image.path.replace('indx', idx.toString()),
+    alt: `${image.alt}`
+  }))
 
-  return allImagePaths
+  return pathsForThisImage
 }
 
 interface GalleryImageItem {

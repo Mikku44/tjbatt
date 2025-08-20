@@ -6,19 +6,10 @@ import CardService from './components/cardService'
 import Gallery from './components/gallery'
 import RecentArticle from './components/recentArticle'
 import Tags from './components/tags'
-import { HomeTags } from './constants/app'
+import { brands, HomeTags } from './constants/app'
 
 export default function Home () {
-  const brands = [
-    { src: '/brand/varta.jpg', alt: 'varta battery' },
-    { src: '/brand/3k.png', alt: '3k' },
-    { src: '/brand/gs.png', alt: 'gs' },
-    { src: '/brand/puma.png', alt: 'puma' },
-    { src: '/brand/fb.png', alt: 'fb' },
-    { src: '/brand/delkor.avif', alt: 'delkor' },
-    { src: '/brand/yuasa.jpg', alt: 'yuasa' },
-    { src: '/brand/flamm.jpg', alt: 'flamm' }
-  ]
+  
 
   const steps = [
     {
@@ -84,7 +75,7 @@ export default function Home () {
       <h4 className='font-bold text-4xl pb-3 mt-10 text-[var(--primary)] text-center'>
         ตัวแทนจำหน่ายแบตเตอรี่รถยนต์
       </h4>
-      <p className='text-black/80 mb-5 text-lg mx-auto max-w-[800px] text-center'>
+      <p className='text-black/80 mb-5 px-4 text-lg mx-auto max-w-[800px] text-center'>
         ตั้งใจขายแบต จำหน่ายแบตเตอรี่รถยนต์
         รถยนต์ไฟฟ้า ทางร้านคัดสรรเแบตเตอรี่คุณภาพดีจากแบรนด์ชั้นนำ ได้แก่ GS ,
         3K , FB , YUASA , VARTA , AMARON , PUMA , DELKOR,FIAMM และอื่น ๆ
@@ -332,11 +323,11 @@ export default function Home () {
           <p className=' mt-5 font-medium text-lg'>เปิดให้บริการทุกวัน</p>
           <p className=' opacity-80 font-normal'>เวลา 9.00-19.00 น.</p>
 
-          <p className=' mt-5 font-medium text-lg'>สาขาที่รับบริการ</p>
+          <p className=' mt-5 font-medium text-lg'>ติดต่อเราหรือเข้ารับบริการได้ที่</p>
           <p className='opacity-80 font-normal'>
             สาขาพระรามที่ 2 ซอย 62 (เคหะธน)
           </p>
-          <p className='opacity-80 font-normal'>สาขาสุขสวัสดิ์</p>
+          <p className='opacity-80 font-normal'>สาขาสุขสวัสดิ์ ซอย 30</p>
         </div>
 
         <div className='w-full  h-full bg-gray-300 min-h-[500px] '>

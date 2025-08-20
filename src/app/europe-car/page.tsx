@@ -1,9 +1,12 @@
 import { Metadata } from 'next'
 import Tags from '../components/tags'
-import { EuropeTags, GalleryImageName } from '../constants/app'
-import CardService from '../components/cardService'
+import {
+  brands,
+  EuropeTags,
+  galleryGeneratorWithPath,
+  GalleryImageName
+} from '../constants/app'
 import * as motion from 'motion/react-client'
-import MyGallery from '../components/imageSlider'
 
 export const metadata: Metadata = {
   title: 'TJ Batt – ตั้งใจขายแบต อัลบั้มรถยูโรป',
@@ -21,7 +24,8 @@ export default function page () {
                  bg-cover bg-no-repeat bg-center'
       >
         <img
-          src='/raw/images-tj/benzgbl (2).jpg'
+          rel='noreferrer'
+          src='https://images.unsplash.com/photo-1558487086-ceea71ddd5ec?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
           alt='europe car cover'
           className='absolute inset-0 w-screen h-full object-cover'
         />
@@ -60,7 +64,26 @@ export default function page () {
           </motion.h2>
         </div>
       </section>
-      <main className='min-h-screen max-w-7xl m-auto mt-20 px-4 mb-10'>
+
+      {/* Brand Logos Section */}
+      <section className='max-w-7xl mx-auto px-4 md:justify-between flex gap-4 py-10 justify-center items-center flex-wrap'>
+        {brands.map((brand, i) => (
+          <motion.img
+            key={brand.alt}
+            src={brand.src}
+            alt={brand.alt}
+            className='md:max-w-[100px] saturate-0 max-w-[60px] h-auto'
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              transition: { delay: i * 0.1, duration: 0.4 }
+            }}
+            viewport={{ once: true }}
+          />
+        ))}
+      </section>
+      <main className='min-h-screen max-w-7xl m-auto md:mt-20 mt-5 px-4 mb-10'>
         {/* <div className='rounded-xl overflow-hidden max-h-[300px] flex flex-col relative justify-center items-center'>
           <img
             loading='lazy'
@@ -70,6 +93,23 @@ export default function page () {
             className='w-full h-full object-center'
           />
         </div> */}
+        <div className='text-sm text-gray-700 text-center mb-2'>
+          ทำไมต้องติดตั้งกับเรา
+        </div>
+        <h3
+          id='ourservice'
+          className='text-4xl font-bold text-center  text-gray-900'
+        >
+          ความชำนาญเฉพาะทาง
+        </h3>
+
+        <p className='mt-4 leading-8 text-gray-700 mb-12 text-lg px-4'>
+          <b>รถยุโรป</b> ขึ้นชื่อเรื่องสมรรถนะ ความหรูหรา และเทคโนโลยีที่ทันสมัย
+          ไม่ว่าจะเป็น Mercedes-Benz, BMW, Audi, Porsche หรือ Volvo
+          รถเหล่านี้ถูกออกแบบมาให้มีระบบไฟฟ้าและอิเล็กทรอนิกส์ที่ซับซ้อนกว่ารถทั่วไป
+          ดังนั้น
+          การเลือกแบตเตอรี่และการเปลี่ยนแบตเตอรี่สำหรับรถยุโรปจึงต้องใช้ความชำนาญเฉพาะทาง
+        </p>
 
         <div className='text-sm text-gray-700 text-center mb-2'>
           รายการรถลูกค้าที่ไว้ใจเรา
@@ -81,14 +121,39 @@ export default function page () {
           นี้คือส่วนหนึ่งจากรถยุโรป
         </h3>
 
-        <MyGallery />
-        <section className='my-5 grid md:grid-cols-3 gap-2'>
-          {GalleryImageName.map(image => (
-            <CardService
-              image={image.path.replace('indx', '1')}
-              key={image.path}
-              title={image.alt}
-            />
+        {/* <MyGallery /> */}
+        <section className='my-10 space-y-8'>
+          {GalleryImageName.slice(0,GalleryImageName.length - 1).map(image => (
+            <div key={image.path} className=' p-6 space-y-4'>
+              {/* Section Title */}
+              <h3 className='text-2xl text-gray-800'>{image.alt}</h3>
+
+              {/* Image Grid */}
+              <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
+                {galleryGeneratorWithPath(image).map((item, idx) => (
+                  <motion.div
+                    initial={{ y: 50, opacity: 0 }}
+                    whileInView={{
+                      y: 0,
+                      opacity: 1,
+                      transition: { duration: 0.6, ease: 'easeOut' }
+                    }}
+                    viewport={{ once: true }}
+                    key={idx}
+                    className='relative aspect-[4/3] overflow-hidden rounded-xl group'
+                  >
+                    <img
+                    loading='lazy'
+                      src={item.src}
+                      alt={item.alt}
+                      className='w-full h-full object-cover transition-transform duration-300 group-hover:scale-110'
+                    />
+                    {/* Overlay on hover */}
+                    <div className='absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300'></div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           ))}
         </section>
 
