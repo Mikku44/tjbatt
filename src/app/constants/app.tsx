@@ -137,8 +137,8 @@ export const GalleryImageName = [
     alt: 'เปลี่ยนแบตเตอรี่ Porsche Cayenne Hybrid '
   },
   {
-    path: '/raw/images-tj/showcase (indx).jpg',
-    count: 25,
+    path: '/raw/images-tj/evcar (indx).jpg',
+    count: 22,
     alt: 'เปลี่ยนแบตเตอรี่ รถไฟฟ้า (EV)'
   }
 ]

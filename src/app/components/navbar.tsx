@@ -16,10 +16,12 @@ export default function Navbar () {
               className='size-14 rounded-full mr-5'
             />
           </Link>
-          <div className='md:flex hidden'>
+          <div className='md:flex hidden gap-3'>
             {menuList.map((menu, index) => (
               <Link
-                className='w-[100px] text-white p-1 mix-blend-difference text-center '
+                className='w-[100px] font-light hover:border-slate-900 border-b-transparent
+                duration-200 hover:text-yellow-300
+                border-b-2  p-1 text-center '
                 key={index}
                 href={menu.href}
               >
