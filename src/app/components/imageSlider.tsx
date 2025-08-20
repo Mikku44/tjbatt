@@ -1,10 +1,10 @@
 'use client'
 import ImageGallery, { ReactImageGalleryItem } from 'react-image-gallery'
 import 'react-image-gallery/styles/css/image-gallery.css'
-import { galleryGeneratorWithPath } from '../constants/app'
+import { galleryGenerator } from '../constants/app'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
-const images: ReactImageGalleryItem[] = galleryGeneratorWithPath().map(item => ({
+const images: ReactImageGalleryItem[] = galleryGenerator(50).map(item => ({
   original: item.src,
   thumbnail: item.src,
   description: item.alt, // optional if you have alt text
