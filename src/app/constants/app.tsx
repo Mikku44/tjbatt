@@ -138,7 +138,7 @@ export const GalleryImageName = [
   },
   {
     path: '/raw/images-tj/evcar (indx).jpg',
-    count: 22,
+    count: 13,
     alt: 'เปลี่ยนแบตเตอรี่ รถไฟฟ้า (EV)'
   }
 ]
