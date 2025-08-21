@@ -1,4 +1,6 @@
 // app/tags/[label]/page.tsx
+import { BlogPost } from '@/app/[categoryName]/[blogTitle]/page'
+import BlogCard from '@/app/components/blogCard'
 import { getAllBlog } from '@/app/utils/supabase/repository/blogs'
 import { notFound } from 'next/navigation'
 
@@ -7,7 +9,6 @@ interface ITagsProps {
     label: string
   }>
 }
-
 
 export async function generateMetadata ({ params }: ITagsProps) {
   const { label } = await params
@@ -29,8 +30,6 @@ export default async function TagPage ({ params }: Readonly<ITagsProps>) {
 
   if (!label) notFound()
 
-
-
   const relatedBlogs = await getAllBlog()
 
   return (
@@ -45,17 +44,17 @@ export default async function TagPage ({ params }: Readonly<ITagsProps>) {
         </p>
       </header>
 
-      <section className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+      <section className='pb-20'>
         <ul className='grid gap-4 md:grid-cols-2'>
-          {relatedBlogs.map(blog => (
-            <li key={blog.id} className='p-4 rounded-lg shadow bg-white'>
-              <a href={`/blog/${blog.slug}`} className='block'>
-                <h3 className='text-lg font-bold'>{blog.title}</h3>
-                <p className='text-sm text-gray-500'>
-                  {new Date(blog.published_at).toLocaleDateString('th-TH')}
-                </p>
-              </a>
-            </li>
+          {relatedBlogs?.map(blog => (
+            <BlogCard
+              key={blog.id}
+              imageURL={blog?.cover_image_url || '/icon.jpg'}
+              href={`/blog/${blog.slug}`}
+              title={blog.title}
+              description={blog.title}
+              tags={blog.tags?.split(',') || []}
+            />
           ))}
         </ul>
       </section>

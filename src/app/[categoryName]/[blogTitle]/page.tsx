@@ -173,12 +173,16 @@ export async function generateMetadata(
     },
   }
 }
+
+
  
 
 
 export default async function Page({ params }: Readonly<IProps>) {
   const { categoryName, blogTitle } = await params;
   const blogData = await getBlogWithSlug(blogTitle);
+
+  console.log(blogData)
   
   if (!blogData || blogData.length === 0) {
     return (

@@ -3,8 +3,9 @@ export const menuList = [
   { href: '/#ourwork', label: 'การทำงาน' },
   { href: '/#aboutus', label: 'เกี่ยวกับเรา' },
   { href: '/#gallery', label: 'แกลลอรี่' },
-  { href: '/europe-car', label: 'บริการรถยุโรป' },
-  { href: '/electric-car', label: 'บริการรถไฟฟ้า' },
+  // { href: '/europe-car', label: 'บริการรถยุโรป' },
+  // { href: '/electric-car', label: 'บริการรถไฟฟ้า' },
+  // { href: '/engine-car', label: 'บริการรถสันดาป' },
   { href: '/#blog', label: 'บทความ' }
 ]
 
@@ -55,28 +56,29 @@ export const EuropeTags: string[] = [
   '#แบตเตอรี่สัญชาติเยอรมัน',
   '#กำเนิดขุมพลังระดับโลก'
 ]
-export const EVTags: string[] = [
-  '#แบตเตอรี่รถไฟฟ้า',
-  '#แบตเตอรี่ev',
-  '#เปลี่ยนแบตเตอรี่รถไฟฟ้า',
-  '#บริการรถev',
-  '#evbattery',
-  '#evcar',
-  '#teslabattery',
-  '#bydbattery',
-  '#bmwi',
-  '#mercedeseq',
-  '#volvorecharge',
-  '#รถยนต์ไฟฟ้า',
-  '#รถev',
-  '#แบตเตอรี่ลิเธียม',
-  '#ชาร์จรถไฟฟ้า',
-  '#บริการรถไฟฟ้า',
-  '#เปลี่ยนแบตevนอกสถานที่',
-  '#แบตเตอรี่สำรองev',
+export const ICETags: string[] = [
+  '#แบตเตอรี่รถยนต์',
+  '#แบตเตอรี่สันดาป',
+  '#เปลี่ยนแบตเตอรี่รถยนต์',
+  '#บริการรถยนต์',
+  '#carbattery',
+  '#enginecar',
+  '#benzbattery',
+  '#bmwbattery',
+  '#toyotabattery',
+  '#hondabattery',
+  '#mazdabattery',
+  '#รถยนต์ทั่วไป',
+  '#รถเครื่องยนต์',
+  '#แบตเตอรี่12v',
+  '#ตรวจเช็คแบตเตอรี่',
+  '#บริการเปลี่ยนแบตเตอรี่',
+  '#เปลี่ยนแบตนอกสถานที่',
+  '#แบตเตอรี่สำรอง',
   '#batterydelivery',
-  '#evthailand'
-]
+  '#icethailand'
+];
+
 
 
 export const GalleryImage = ['/raw/images-tj/benzc220 (1).jpg']

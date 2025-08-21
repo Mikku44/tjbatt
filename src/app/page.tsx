@@ -182,6 +182,7 @@ export default function Home () {
       <section className='w-full gap-4 px-4 max-w-7xl mx-auto flex md:flex-row flex-col'>
         <CardService title='รถยุโรป' href="/europe-car" image='/raw/images-tj/benzgbl (2).jpg' />
         <CardService title='รถไฟฟ้า' href="/electric-car"  image='/raw/images-tj/showcase (24).jpg'/>
+        <CardService title='รถสันดาป' href="/engine-car"  image='/raw/images-tj/showcase (18).jpg'/>
       </section>
 
       {/* working step */}
