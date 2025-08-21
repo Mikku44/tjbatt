@@ -125,17 +125,17 @@ const BlogEditor = () => {
   }
 
   const handleSubmit = () => {
-    const payload : BlogPost = {
-      title: '',
-      slug: '',
-      content: blogData,
-      cover_image_url: null,
-      status: null,
-      published_at: null,
-      tags: null
-    }
-    const result  =  insertBlog(payload);
-    console.log("RESULT : ",result);
+    // const payload : BlogPost = {
+    //   title: '',
+    //   slug: '',
+    //   content: blogData,
+    //   cover_image_url: null,
+    //   status: null,
+    //   published_at: null,
+    //   tags: null
+    // }
+    // const result  =  insertBlog(payload);
+    // console.log("RESULT : ",result);
     return 
   }
   
