@@ -57,10 +57,8 @@ export default function page () {
             viewport={{ once: true }}
             className='text-white mt-4'
           >
-            ติดตั้งแบตเตอรี่รถยนต์ไฟฟ้า / ญี่ปุ่น พื้นที่ให้บริการ พระราม 2
-            และฝั่งธนฯ บริการนอกสถานที่ฟรี ติดตั้งแบตเตอรี่รถยนต์ยุโรป
-            พื้นที่ให้บริการ กทม.และปริมณฑล
-            โปรแกรมลงทะเบียนแบตเตอรี่ลูกใหม่สำหรับรถยุโรปฟรี!!
+            ติดตั้งแบตเตอรี่รถยนต์ยุโรป พื้นที่ให้บริการกรุงเทพฯ และปริมณฑล
+            ติดตั้งนอกสถานที่ฟรี**
           </motion.h2>
         </div>
       </section>
@@ -123,7 +121,7 @@ export default function page () {
 
         {/* <MyGallery /> */}
         <section className='my-10 space-y-8'>
-          {GalleryImageName.slice(0,GalleryImageName.length - 1).map(image => (
+          {GalleryImageName.slice(0, GalleryImageName.length - 1).map(image => (
             <div key={image.path} className=' p-6 space-y-4'>
               {/* Section Title */}
               <h3 className='text-2xl text-gray-800'>{image.alt}</h3>
@@ -143,7 +141,7 @@ export default function page () {
                     className='relative aspect-[4/3] overflow-hidden rounded-xl group'
                   >
                     <img
-                    loading='lazy'
+                      loading='lazy'
                       src={item.src}
                       alt={item.alt}
                       className='w-full h-full object-cover transition-transform duration-300 group-hover:scale-110'

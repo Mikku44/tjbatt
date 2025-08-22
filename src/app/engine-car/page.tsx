@@ -1,10 +1,6 @@
 import { Metadata } from 'next'
 import Tags from '../components/tags'
-import {
-  brands,
-  galleryGeneratorWithPath,
-  ICETags
-} from '../constants/app'
+import { brands, galleryGeneratorWithPath, ICETags } from '../constants/app'
 import * as motion from 'motion/react-client'
 
 export const metadata: Metadata = {
@@ -56,10 +52,8 @@ export default function page () {
             viewport={{ once: true }}
             className='text-white mt-4'
           >
-            ติดตั้งแบตเตอรี่รถยนต์สันดาป / ญี่ปุ่น พื้นที่ให้บริการ พระราม 2
-            และฝั่งธนฯ บริการนอกสถานที่ฟรี ติดตั้งแบตเตอรี่รถยนต์สันดาป
-            พื้นที่ให้บริการ กทม.และปริมณฑล
-            โปรแกรมลงทะเบียนแบตเตอรี่ลูกใหม่สำหรับรถสันดาปฟรี!!
+            ติดตั้งแบตเตอรี่รถยนต์สันดาป พื้นที่ให้บริการกรุงเทพฯ
+            และจังหวัดสมุทรสาคร ติดตั้งนอกสถานที่ฟรี**
           </motion.h2>
         </div>
       </section>
