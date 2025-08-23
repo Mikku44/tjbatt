@@ -26,15 +26,17 @@ export default function Footer() {
         <div className="flex flex-col gap-2">
           <div className="font-bold text-lg">บริการ</div>
           <Link href="/#" className="font-light hover:underline">
-            บริการเปลี่ยนแบต
+            บริการติดตั้งแบตเตอรี่ทั้งในและนอกสถานที่
           </Link>
           <Link href="/#" className="font-light hover:underline">
-            ลงโปรแกรมทะเบียน
+            บริการตรวจเช็คสุขภาพแบตเตอรี่รถยนต์ / รถยนต์ไฟฟ้า
           </Link>
           <Link href="/#" className="font-light hover:underline">
-            บริการนอกสถานที่
+            บริการโปรแกรมลงทะเบียนแบตเตอรี่สำหรับรถยุโรป
           </Link>
         </div>
+
+      
 
         {/* Contact */}
         <div className="flex flex-col gap-4">
@@ -42,7 +44,11 @@ export default function Footer() {
             +66 (0)99-492-2889
           </div>
           <div className="text-lg sm:text-2xl font-light break-words">
-            invisible072@gmail.com
+            
+            <img 
+            className='size-[150px] rounded-xl mb-1'
+            src="/social/line.png" alt="tjbatt line" />
+            ID Line : @tjbatt
           </div>
           <Link
             href="tel:+6699-492-2889"

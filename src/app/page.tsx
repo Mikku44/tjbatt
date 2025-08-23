@@ -9,8 +9,6 @@ import Tags from './components/tags'
 import { brands, HomeTags } from './constants/app'
 
 export default function Home () {
-  
-
   const steps = [
     {
       icon: <Phone className='w-10 h-10 text-[var(--primary)]' />,
@@ -64,10 +62,9 @@ export default function Home () {
             viewport={{ once: true }}
             className='text-white mt-4'
           >
-            ติดตั้งแบตเตอรี่รถยนต์ไฟฟ้า / ญี่ปุ่น พื้นที่ให้บริการ พระราม 2
-            และฝั่งธนฯ บริการนอกสถานที่ฟรี ติดตั้งแบตเตอรี่รถยนต์ยุโรป
-            พื้นที่ให้บริการ กทม.และปริมณฑล
-            โปรแกรมลงทะเบียนแบตเตอรี่ลูกใหม่สำหรับรถยุโรปฟรี!!
+            เรามีทีมช่างพร้อมให้คำแนะนำแบตเตอรี่ตรงรุ่นสำหรับรถยนต์
+            และรถยนต์ไฟฟ้า
+            เพื่อตอบสนองต่อความต้องการของท่าเจ้าของรถและเกิดประสิทธิภาพ
           </motion.h2>
         </div>
       </section>
@@ -79,7 +76,8 @@ export default function Home () {
         ตั้งใจขายแบต จำหน่ายแบตเตอรี่รถยนต์
         รถยนต์ไฟฟ้า ทางร้านคัดสรรเแบตเตอรี่คุณภาพดีจากแบรนด์ชั้นนำ ได้แก่ GS ,
         3K , FB , YUASA , VARTA , AMARON , PUMA , DELKOR,FIAMM และอื่น ๆ
-        ที่มีมาตรฐาน บริการติดตั้งแบตเตอรี่นอกสถานที่ กรุงเทพฯและปริมณฑลติดตั้ง โดยช่างมืออาชีพ
+        ที่มีมาตรฐาน บริการติดตั้งแบตเตอรี่นอกสถานที่ กรุงเทพฯและปริมณฑลติดตั้ง
+        โดยช่างมืออาชีพ
       </p>
 
       {/* Brand Logos Section */}
@@ -107,7 +105,8 @@ export default function Home () {
         <Link
           className='p-4 border flex gap-2 justify-center hover:opacity-80 duration-200 items-center bg-black/80 text-white w-full rounded-sm'
           href='tel:0994322889'
-           rel="noreferrer" target='_blank'
+          rel='noreferrer'
+          target='_blank'
         >
           <div className=''>
             <Phone />
@@ -117,7 +116,8 @@ export default function Home () {
         <Link
           className='p-4 border flex gap-2 justify-center hover:opacity-80 duration-200 items-center bg-[#06C755] text-white w-full rounded-sm'
           href='https://line.me/R/ti/p/@318evmbw'
-           rel="noreferrer" target='_blank'
+          rel='noreferrer'
+          target='_blank'
         >
           <div className=''>
             {' '}
@@ -134,7 +134,8 @@ export default function Home () {
         <Link
           className='p-4 border flex gap-2 justify-center hover:opacity-80 duration-200 items-center bg-[#1b77f2] text-white w-full rounded-sm'
           href='https://www.facebook.com/profile.php?id=100063865400498'
-           rel="noreferrer" target='_blank'
+          rel='noreferrer'
+          target='_blank'
         >
           <div className=''>
             <Facebook />
@@ -151,21 +152,23 @@ export default function Home () {
 
         <div className='flex md:flex-row flex-col md:gap-4 gap-2 my-3'>
           <div className='rounded-full w-fit bg-black/80 text-yellow-500 px-6 py-2'>
-            ติดตั้งแบต
+            บริการติดตั้งแบตเตอรี่ทั้งในและนอกสถานที่
           </div>
           <div className='rounded-full w-fit bg-black/80 text-yellow-500 px-6 py-2'>
-            ลงโปรแกรมทะเบียน
+            บริการตรวจเช็คสุขภาพแบตเตอรี่รถยนต์ / รถยนต์ไฟฟ้า
           </div>
           <div className='rounded-full w-fit bg-black/80 text-yellow-500 px-6 py-2'>
-            บริการนอกสถานที่
+            บริการโปรแกรมลงทะเบียนแบตเตอรี่สำหรับรถยุโรป
           </div>
         </div>
 
-        <p className='text-black/80 md:max-w-[500px] my-5'>
-          ติดตั้งแบตเตอรี่รถยนต์ไฟฟ้า / ญี่ปุ่น พื้นที่ให้บริการ พระราม 2
-          และฝั่งธนฯ บริการนอกสถานที่ฟรี<br/>ติดตั้งแบตเตอรี่รถยนต์ยุโรป
-          พื้นที่ให้บริการ
-          กทม.และปริมณฑลโปรแกรมลงทะเบียนแบตเตอรี่ลูกใหม่สำหรับรถยุโรปฟรี!!
+        <p className='text-black/80 md:max-w-[550px] my-5 space-y-1'>
+          ติดตั้งแบตเตอรี่รถยนต์สันดาป / รถยนต์ไฟฟ้า พื้นที่ให้บริการกรุงเทพฯ
+          และจังหวัดสมุทรสาคร ติดตั้งนอกสถานที่ฟรี**
+          <br />
+          ติดตั้งแบตเตอรี่รถยนต์ยุโรป พื้นที่ให้บริการ กรุงเทพฯ และปริมณฑล
+          (นอกเหนือจากนี้สามารถโทรสอบถามได้ครับ)
+          โปรแกรมลงทะเบียนแบตเตอรี่ลูกใหม่สำหรับรถยุโรปฟรี**
         </p>
       </section>
 
@@ -180,9 +183,21 @@ export default function Home () {
         </div>
       </section> */}
       <section className='w-full gap-4 px-4 max-w-7xl mx-auto flex md:flex-row flex-col'>
-        <CardService title='รถยุโรป' href="/europe-car" image='/raw/images-tj/benzgbl (2).jpg' />
-        <CardService title='รถไฟฟ้า' href="/electric-car"  image='/raw/images-tj/showcase (24).jpg'/>
-        <CardService title='รถสันดาป' href="/engine-car"  image='/raw/images-tj/showcase (18).jpg'/>
+        <CardService
+          title='รถยุโรป'
+          href='/europe-car'
+          image='/raw/images-tj/benzgbl (2).jpg'
+        />
+        <CardService
+          title='รถไฟฟ้า'
+          href='/electric-car'
+          image='/raw/images-tj/showcase (24).jpg'
+        />
+        <CardService
+          title='รถสันดาป'
+          href='/engine-car'
+          image='/raw/images-tj/showcase (18).jpg'
+        />
       </section>
 
       {/* working step */}
@@ -250,40 +265,47 @@ export default function Home () {
 
         <ol className='space-y-6 text-gray-800 text-lg list-decimal list-inside'>
           <li>
-            สอบถามข้อมูลและอาการของรถเบื้องต้นจากลูกค้า เพื่อหาสาเหตุว่าเกิดจาก
-            <strong>แบตเตอรี่เสื่อมสภาพ</strong> หรือเกิดจากปัญหาอื่น ๆ ของตัวรถ
+            สอบถามข้อมูลและอาการของรถเบื้องต้นจากลูกค้า เพื่อหาสาเหตุว่าเกิดจาก{' '}
+            <strong>แบตเตอรี่เสื่อมสภาพ</strong>
+            หรือเกิดจากปัญหาอื่น ๆ ของตัวรถ
           </li>
           <li>
-            แนะนำแบตเตอรี่ที่เหมาะสมกับ <strong>รุ่นรถ</strong> และตรงกับ
-            <strong>ลักษณะการใช้งานของลูกค้า</strong>
+            ช่างจะแนะนำ <strong>แบตเตอรี่ที่เหมาะสมตรงรุ่นรถ</strong>
+            และตรงกับ <strong>ลักษณะการใช้งานของรถลูกค้า</strong>
           </li>
           <li>
-            ก่อนทำการเปลี่ยนแบตเตอรี่
-            ช่างจะตรวจเช็คแบตเตอรี่ของลูกค้าก่อนทุกครั้ง
-            เพื่อยืนยันว่าแบตเตอรี่เสื่อมสภาพจริง
+            ก่อนทำการเปลี่ยนแบตเตอรี่ ช่างจะ{' '}
+            <strong>ตรวจเช็คแบตเตอรี่ของลูกค้าก่อนทุกครั้ง</strong>
+            เพื่อเป็นการยืนยันว่าแบตเตอรี่เสื่อมสภาพ
           </li>
           <li>
-            ก่อนติดตั้งแบตเตอรี่ ทางร้านจะติดสติ๊กเกอร์ที่มี{' '}
-            <strong>ชื่อร้าน / เบอร์โทร / วันที่ติดตั้ง</strong> ที่แบตเตอรี่
-            เพื่อให้ลูกค้าสามารถตรวจสอบอายุการใช้งานและติดต่อได้สะดวก
+            ก่อนติดตั้งแบตเตอรี่ ช่างจะ <strong>ลงวันที่ติดตั้ง</strong>
+            ลงบนแบตเตอรี่
+            เพื่อให้ลูกค้าสามารถตรวจเช็คอายุการใช้งานเบื้องต้นได้ด้วยตนเอง{' '}
+            <br />
+            และติด <strong>สติกเกอร์ชื่อร้าน / เบอร์โทรศัพท์</strong>
+            เพื่อสะดวกต่อการติดต่อทางร้าน
           </li>
           <li>
-            ขณะติดตั้งแบตเตอรี่ มีการ <strong>สำรองระบบไฟทุกครั้ง</strong>{' '}
-            เพื่อให้ระบบต่าง ๆ เช่น นาฬิกา วิทยุ ยังคงเดิม โดยไม่ต้องเซ็ตใหม่
+            ขณะติดตั้งแบตเตอรี่ มีการ <strong>สำรองระบบไฟ</strong>
+            เพื่อให้ระบบทุกอย่างในรถยังคงเดิม ไม่ต้องมีการเซ็ตระบบใหม่ เช่น
+            นาฬิกา วิทยุ เป็นต้น
           </li>
           <li>
-            บริการ <strong>สเปรย์ทำความสะอาดขั้วแบตเตอรี่</strong>{' '}
-            ตัวล็อคและที่คาดแบตเตอรี่ เพื่อลดการเกิด{' '}
-            <strong>ขี้เกลือจากน้ำกรด</strong> ซึ่งเป็นสาเหตุให้ถาดรองผุกร่อน
-            และทำให้ขั้วแบตเสื่อมได้
+            <strong>ขี้เกลือ</strong> ซึ่งเกิดจากการระเหยของน้ำกรด
+            และเป็นสัญญาณบ่งบอกว่าแบตเตอรี่เสื่อมสภาพ <br />
+            ช่างจะบริการ{' '}
+            <strong>
+              สเปรย์ทำความสะอาดขั้วแบตเตอรี่ ตัวล็อค และที่คาดแบตเตอรี่
+            </strong>
           </li>
           <li>
-            บริการตรวจเช็ค <strong>ไฟรั่ว / ไฟชาร์จ</strong>{' '}
+            มีบริการตรวจเช็ค <strong>ไฟรั่ว / ไฟชาร์จ</strong>
             ของรถหลังการติดตั้งแบตเตอรี่
           </li>
           <li>
-            ทีมช่างจะแนะนำวิธีการ <strong>ดูแลรักษาแบตเตอรี่</strong> ที่ถูกต้อง
-            เพื่อให้ใช้งานได้ยาวนานยิ่งขึ้น
+            ช่างจะแนะนำวิธีการ <strong>ดูแลรักษาแบตเตอรี่</strong> ที่ถูกต้อง
+            เพื่อให้แบตเตอรี่ของท่านสามารถใช้งานได้นานยิ่งขึ้น
           </li>
         </ol>
 
@@ -294,8 +316,6 @@ export default function Home () {
           จะทำให้แบตเตอรี่เสื่อมเร็วกว่าปกติ)
         </p>
       </section>
-
-     
 
       {/* Recent Article */}
       <section id='blog' className='w-full gap-4 px-4 max-w-7xl mx-auto mt-10'>
@@ -309,7 +329,6 @@ export default function Home () {
         <RecentArticle />
       </section>
 
-
       {/* Keywoed & tags */}
       <Tags tags={HomeTags}></Tags>
 
@@ -319,12 +338,14 @@ export default function Home () {
             เกี่ยวกับเรา
           </h3>
           <p className='text-xl mt-5 font-light'>
-            บริการเปลี่ยนแบตนอกสถานที่ฟรี
+            ติดตั้งแบตเตอรี่นอกสถานที่ฟรี**
           </p>
           <p className=' mt-5 font-medium text-lg'>เปิดให้บริการทุกวัน</p>
           <p className=' opacity-80 font-normal'>เวลา 9.00-19.00 น.</p>
 
-          <p className=' mt-5 font-medium text-lg'>ติดต่อเราหรือเข้ารับบริการได้ที่</p>
+          <p className=' mt-5 font-medium text-lg'>
+            ติดต่อเราหรือเข้ารับบริการได้ที่
+          </p>
           <p className='opacity-80 font-normal'>
             สาขาพระรามที่ 2 ซอย 62 (เคหะธน)
           </p>

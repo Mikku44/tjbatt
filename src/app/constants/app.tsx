@@ -114,7 +114,7 @@ export const GalleryImageName = [
   {
     path: '/raw/images-tj/benzgbl (indx).jpg',
     count: 3,
-    alt: 'เปลี่ยนแบตเตอรี่ Mercedes-Benz GLB200 (W247 '
+    alt: 'เปลี่ยนแบตเตอรี่ Mercedes-Benz GLB200 (W247)'
   },
   {
     path: '/raw/images-tj/benzglc (indx).jpg',
