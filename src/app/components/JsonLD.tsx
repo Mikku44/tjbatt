@@ -3,9 +3,9 @@ import Script from "next/script"
 const ORG = {
   '@context': 'https://schema.org',
   '@type': 'AutoPartsStore', // also valid: "AutomotiveBusiness"
-  '@id': 'https://tjbatt.vercel.app/#organization',
+  '@id': 'https://tjbatt.com/#organization',
   name: 'ตั้งใจขายแบต (TJ Batt)',
-  url: 'https://tjbatt.vercel.app/',
+  url: 'https://tjbatt.com/',
   telephone: '+66994922889',
   email: 'invisible072@gmail.com',
   sameAs: [
@@ -87,10 +87,10 @@ const ORG = {
 const WEBSITE = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  '@id': 'https://tjbatt.vercel.app/#website',
-  url: 'https://tjbatt.vercel.app/',
+  '@id': 'https://tjbatt.com/#website',
+  url: 'https://tjbatt.com/',
   name: 'TJ Batt – ตั้งใจขายแบต',
-  publisher: { '@id': 'https://tjbatt.vercel.app/#organization' }
+  publisher: { '@id': 'https://tjbatt.com/#organization' }
 }
 
 const BREADCRUMBS = {
@@ -101,25 +101,25 @@ const BREADCRUMBS = {
       '@type': 'ListItem',
       position: 1,
       name: 'หน้าหลัก',
-      item: 'https://tjbatt.vercel.app/'
+      item: 'https://tjbatt.com/'
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: 'บริการ',
-      item: 'https://tjbatt.vercel.app/#บริการ'
+      item: 'https://tjbatt.com/#บริการ'
     },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'การทำงาน',
-      item: 'https://tjbatt.vercel.app/#การทำงาน'
+      item: 'https://tjbatt.com/#การทำงาน'
     },
     {
       '@type': 'ListItem',
       position: 4,
       name: 'เกี่ยวกับเรา',
-      item: 'https://tjbatt.vercel.app/#เกี่ยวกับเรา'
+      item: 'https://tjbatt.com/#เกี่ยวกับเรา'
     }
   ]
 }
