@@ -12,7 +12,7 @@ export default function FloatingButton () {
     >
       
       {isOpend && <div className="grid gap-2">
-        <Link target='_blank' href="https://www.facebook.com/profile.php?id=100063865400498" rel="noreferrer" className='rounded-full  hover:opacity-90 bg-[var(--primary)] size-[50px] text-white p-3'>
+        <Link target='_blank' href="https://www.facebook.com/profile.php?id=61565159984797" rel="noreferrer" className='rounded-full  hover:opacity-90 bg-[var(--primary)] size-[50px] text-white p-3'>
           <Facebook />
         </Link>
         <Link  target='_blank' href="tel:0994922889" rel="noreferrer" className='rounded-full  hover:opacity-90 bg-[var(--primary)] size-[50px] text-white p-3'>

@@ -104,7 +104,7 @@ export default function Home () {
       <section className='w-full gap-4 px-4 mt-10 max-w-7xl mx-auto flex md:flex-row flex-col justify-between '>
         <Link
           className='p-4 border flex gap-2 justify-center hover:opacity-80 duration-200 items-center bg-black/80 text-white w-full rounded-sm'
-          href='tel:0994322889'
+          href='tel:0994922889'
           rel='noreferrer'
           target='_blank'
         >
@@ -133,7 +133,7 @@ export default function Home () {
         </Link>
         <Link
           className='p-4 border flex gap-2 justify-center hover:opacity-80 duration-200 items-center bg-[#1b77f2] text-white w-full rounded-sm'
-          href='https://www.facebook.com/profile.php?id=100063865400498'
+          href='https://www.facebook.com/profile.php?id=61565159984797'
           rel='noreferrer'
           target='_blank'
         >
