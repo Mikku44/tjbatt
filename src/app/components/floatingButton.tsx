@@ -12,6 +12,15 @@ export default function FloatingButton () {
     >
       
       {isOpend && <div className="grid gap-2">
+       <Link href="https://line.me/R/ti/p/@318evmbw?ts=07171936&oat_content=url"
+       className='rounded-full  hover:opacity-90 bg-[var(--primary)] size-[50px] text-white p-3'
+       rel="noreferrer" target="_blank">
+              <img
+                src="/social/line_black.svg"
+                alt="line platform logo"
+                className="h-6 sm:h-7 invert-100"
+              />
+            </Link>
         <Link target='_blank' href="https://www.facebook.com/profile.php?id=61565159984797" rel="noreferrer" className='rounded-full  hover:opacity-90 bg-[var(--primary)] size-[50px] text-white p-3'>
           <Facebook />
         </Link>
