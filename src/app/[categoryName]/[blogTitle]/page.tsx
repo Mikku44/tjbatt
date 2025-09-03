@@ -166,7 +166,7 @@ export async function generateMetadata(
  
 
   return {
-    title: `TJ Batt - ตั้งใจขายแบต ${blogData[0]?.title}`,
+    title: `ตั้งใจขายแบต - ${blogData[0]?.title}`,
     keywords : blogData[0]?.tags?.split(","),
     openGraph: {
       images: blogData[0]?.title

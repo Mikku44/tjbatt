@@ -9,11 +9,12 @@ import {
 import * as motion from 'motion/react-client'
 
 export const metadata: Metadata = {
-  title: 'TJ Batt – ตั้งใจขายแบต อัลบั้มรถยูโรป',
+  title: 'ตั้งใจขายแบต – แบตเตอรี่รถยุโรป (BMW, Benz, Audi) | อัลบั้มรถยุโรป',
   description:
-    'บริการเปลี่ยนและติดตั้งแบตเตอรี่รถยนต์ถึงที่ พร้อมเลี้ยงไฟป้องกันข้อมูลหาย ตรวจเช็กสุขภาพแบตเตอรี่ฟรี บริการรวดเร็ว ครอบคลุมหลายพื้นที่',
+    'บริการแบตเตอรี่รถยุโรป ครอบคลุม BMW, Benz, Audi, Volvo, Porsche จาก ตั้งใจขายแบต พร้อมเปลี่ยนและติดตั้งถึงที่ เลี้ยงไฟป้องกันข้อมูลหาย ตรวจเช็กฟรี บริการรวดเร็ว ราคาคุ้มค่า',
   keywords: EuropeTags?.join(', ').replaceAll('#', '')
 }
+
 
 export default function page () {
   return (

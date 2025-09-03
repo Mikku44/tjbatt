@@ -4,11 +4,12 @@ import { brands, galleryGeneratorWithPath, ICETags } from '../constants/app'
 import * as motion from 'motion/react-client'
 
 export const metadata: Metadata = {
-  title: 'TJ Batt – ตั้งใจขายแบต อัลบั้มรถสันดาป',
+  title: 'ตั้งใจขายแบต – แบตเตอรี่รถยนต์สันดาป (ICE) | อัลบั้มรถสันดาป',
   description:
-    'บริการเปลี่ยนและติดตั้งแบตเตอรี่รถยนต์ถึงที่ พร้อมเลี้ยงไฟป้องกันข้อมูลหาย ตรวจเช็กสุขภาพแบตเตอรี่ฟรี บริการรวดเร็ว ครอบคลุมหลายพื้นที่',
+    'รวมข้อมูลและบริการแบตเตอรี่รถยนต์สันดาป (ICE) สำหรับรถเก๋ง รถกระบะ และรถยนต์ทั่วไป จาก ตั้งใจขายแบต พร้อมบริการเปลี่ยนและติดตั้งถึงที่ รวดเร็ว ราคาคุ้มค่า ครอบคลุมหลายพื้นที่',
   keywords: ICETags?.join(', ').replaceAll('#', '')
 }
+
 
 export default function page () {
   return (
