@@ -2,7 +2,7 @@ import React from 'react'
 import BlogCard from './blogCard'
 import CarouselMulti from './carousel'
 import { getAllBlog } from '../utils/supabase/repository/blogs'
-import { BlogPost } from '../[categoryName]/[blogTitle]/page'
+import { BlogPost } from '../blog/[blogTitle]/page'
 
 export default async function RecentArticle () {
   const relatedBlogs: BlogPost[] = await getAllBlog()

@@ -15,7 +15,7 @@ import {
   Upload
 } from 'lucide-react'
 import { insertBlog } from '../utils/supabase/repository/blogs'
-import { BlogPost } from '../[categoryName]/[blogTitle]/page'
+import { BlogPost } from '../blog/[blogTitle]/page'
 
 // Enhanced type definitions with image support
 type HeaderLevel = 1 | 2 | 3

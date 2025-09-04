@@ -1,5 +1,5 @@
-import { getAllBlog } from "@/app/utils/supabase/repository/blogs";
 import { MetadataRoute } from "next";
+import { getAllBlog } from "./utils/supabase/repository/blogs";
 
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

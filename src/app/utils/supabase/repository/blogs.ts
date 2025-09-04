@@ -1,4 +1,4 @@
-import { BlogPost } from "@/app/[categoryName]/[blogTitle]/page"
+import { BlogPost } from "@/app/blog/[blogTitle]/page"
 import { supabase } from "../client"
 
 export async function getAllBlog() {
