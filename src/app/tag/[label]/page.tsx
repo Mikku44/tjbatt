@@ -1,58 +1,63 @@
-import { getAllBlog } from "@/app/utils/supabase/repository/blogs";
-import { MetadataRoute } from "next";
+// app/tags/[label]/page.tsx
 
+import BlogCard from '@/app/components/blogCard'
+import { getAllBlog } from '@/app/utils/supabase/repository/blogs'
+import { notFound } from 'next/navigation'
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = "https://www.tjbatt.com";
+interface ITagsProps {
+  params: Promise<{
+    label: string
+  }>
+}
 
-  // --- Static Pages ---
-  const staticPages = [
-    { url: "/", priority: 1.0, lastmod: "2025-09-03T04:09:41+00:00" },
-    { url: "/europe-car", priority: 0.8, lastmod: "2025-09-03T04:09:41+00:00" },
-    { url: "/electric-car", priority: 0.8, lastmod: "2025-09-03T04:09:41+00:00" },
-    { url: "/engine-car", priority: 0.8, lastmod: "2025-09-03T04:09:41+00:00" },
-  ];
+export async function generateMetadata ({ params }: ITagsProps) {
+  const { label } = await params
 
-  // --- Blogs ---
-  const blogs = await getAllBlog(); 
-  // Example structure: 
-  // [{ slug: "battery-tips", updatedAt: "2025-08-28T10:00:00+00:00", tags: "battery,car" }, ...]
+  return {
+    title: `บทความเกี่ยวกับ ${label} | ร้านแบตเตอรี่รถยนต์`,
+    description: `ค้นหาบทความและข้อมูลเกี่ยวกับ ${label} สำหรับบริการแบตเตอรี่รถยนต์และการดูแลรถ`,
+    keywords: [
+      label,
+      'แบตเตอรี่รถยนต์',
+      'ร้านแบตเตอรี่ใกล้ฉัน',
+      'บทความรถยนต์'
+    ].join(', ')
+  }
+}
 
-  const blogPages = blogs.map((blog: { slug: string; updatedAt?: string }) => ({
-    url: `${baseUrl}/blog/${blog.slug}`,
-    lastModified: blog.updatedAt || new Date().toISOString(),
-    changeFrequency: "weekly" as const,
-    priority: 0.64,
-  }));
+export default async function TagPage ({ params }: Readonly<ITagsProps>) {
+  const { label } = await params
 
-  // --- Tags ---
-  const allTags = new Set<string>();
-  blogs.forEach((blog: { tags?: string }) => {
-    blog.tags
-      ?.split(",")
-      .map((t) => t.trim())
-      .filter(Boolean)
-      .forEach((tag) => allTags.add(tag));
-  });
+  if (!label) notFound()
 
-  const tagPages = Array.from(allTags).map((tag) => ({
-    url: `${baseUrl}/tag/${encodeURIComponent(tag)}`,
-    lastModified: new Date().toISOString(), // or you could use latest blog.updatedAt for this tag
-    changeFrequency: "weekly" as const,
-    priority: 0.5,
-  }));
+  const relatedBlogs = await getAllBlog()
 
-  // --- Combine ---
-  const allPages = [
-    ...staticPages.map((p) => ({
-      url: `${baseUrl}${p.url}`,
-      lastModified: p.lastmod,
-      changeFrequency: "weekly" as const,
-      priority: p.priority,
-    })),
-    ...blogPages,
-    ...tagPages,
-  ];
+  return (
+    <main className='min-h-screen max-w-5xl mx-auto mt-20 px-4'>
+      <header className='mb-12 text-center'>
+        <h1 className='text-4xl mt-5 max-w-[500px] text-ellipsis overflow-hidden mx-auto font-bold text-gray-900'>
+          บทความเกี่ยวกับ &quot;{decodeURI(label)}&quot;
+        </h1>
+        <p className='mt-4 text-gray-600 max-w-[500px] text-ellipsis overflow-hidden mx-auto'>
+          พบบทความและข้อมูลล่าสุดเกี่ยวกับ &quot;{decodeURI(label)}&quot;
+          สำหรับผู้ใช้รถทุกคน
+        </p>
+      </header>
 
-  return allPages;
+      <section className='pb-20'>
+        <ul className='grid gap-4 md:grid-cols-2'>
+          {relatedBlogs?.map(blog => (
+            <BlogCard
+              key={blog.id}
+              imageURL={blog?.cover_image_url || '/icon.jpg'}
+              href={`/blog/${blog.slug}`}
+              title={blog.title}
+              description={blog.title}
+              tags={blog.tags?.split(',') || []}
+            />
+          ))}
+        </ul>
+      </section>
+    </main>
+  )
 }

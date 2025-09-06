@@ -34,7 +34,7 @@ export default function BlogCard({
           {description}
         </p>
 
-        <div className="mt-4 flex flex-wrap gap-2 max-h-[100px] overflow-auto">
+        <div className="mt-4 flex no-scrollbar flex-wrap gap-2 max-h-[100px] overflow-auto">
           {tags.map((tag, idx) => (
             <span
               key={idx}
