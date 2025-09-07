@@ -32,7 +32,7 @@ export default function Home () {
       {/* Hero Section */}
       <section
         className="w-full h-screen max-h-[32rem] p-5 md:p-24 relative overflow-hidden
-          bg-[url('/hero.jpg')] bg-cover bg-no-repeat bg-center"
+          bg-[url('/hero.webp')] bg-cover bg-no-repeat bg-center"
       >
         {/* Gradient Overlay */}
         <div className='absolute inset-0 bg-gradient-to-b from-black/0 to-black/80'></div>
