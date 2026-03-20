@@ -101,7 +101,7 @@ export default function Home() {
           </h2>
 
           <div className='relative'>
-            <span className='absolute -top-6 left-1/2 -translate-x-1/2 text-6xl text-slate-200/50 font-serif opacity-50'>"</span>
+            <span className='absolute -top-6 left-1/2 -translate-x-1/2 text-6xl text-slate-200/50 font-serif opacity-50'>&quot;</span>
             <p className='text-slate-600 leading-relaxed text-lg md:text-xl font-light italic'>
               ตั้งใจขายแบต จำหน่ายแบตเตอรี่รถยนต์และรถยนต์ไฟฟ้า ทางร้านคัดสรรแบตเตอรี่คุณภาพดีจากแบรนด์ชั้นนำ
               <span className="text-slate-900 font-medium"> GS, 3K, FB, YUASA, VARTA, AMARON, PUMA, DELKOR, FIAMM</span> และอื่น ๆ
