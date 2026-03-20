@@ -3,9 +3,9 @@ export const menuList = [
   // { href: '/#ourwork', label: 'การทำงาน' },
   { href: '/#aboutus', label: 'เกี่ยวกับเรา' },
   { href: '/#gallery', label: 'แกลลอรี่' },
-  // { href: '/europe-car', label: 'บริการรถยุโรป' },
-  // { href: '/electric-car', label: 'บริการรถไฟฟ้า' },
-  // { href: '/engine-car', label: 'บริการรถสันดาป' },
+  { href: '/europe-car', label: 'บริการรถยุโรป' },
+  { href: '/electric-car', label: 'บริการรถไฟฟ้า' },
+  { href: '/engine-car', label: 'บริการรถสันดาป' },
   { href: '/#blog', label: 'บทความ' }
 ]
 
@@ -153,7 +153,7 @@ export const GalleryImageName = [
   },
   {
     path: '/raw/images-tj/evcar (indx).jpg',
-    count: 13,
+    count: 19,
     alt: 'เปลี่ยนแบตเตอรี่ รถไฟฟ้า (EV)'
   }
 ]

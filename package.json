@@ -20,7 +20,8 @@
     "react-dom": "19.1.0",
     "react-image-gallery": "^1.4.0",
     "react-inlinesvg": "^4.2.0",
-    "react-multi-carousel": "^2.8.6"
+    "react-multi-carousel": "^2.8.6",
+    "yet-another-react-lightbox": "^3.29.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

@@ -1,4 +1,4 @@
-import { Facebook, MapPin, Phone, Wrench } from 'lucide-react'
+import { ArrowUpRight, CheckCircle2, Clock, Facebook, MapPin, Phone, Wrench } from 'lucide-react'
 import * as motion from 'motion/react-client'
 import SVG from 'react-inlinesvg'
 import Link from 'next/link'
@@ -8,7 +8,7 @@ import RecentArticle from './components/recentArticle'
 import Tags from './components/tags'
 import { brands, HomeTags } from './constants/app'
 
-export default function Home () {
+export default function Home() {
   const steps = [
     {
       icon: <Phone className='w-10 h-10 text-[var(--primary)]' />,
@@ -29,56 +29,87 @@ export default function Home () {
 
   return (
     <main className='mx-auto w-full min-h-[100vh] scroll-smooth'>
-      {/* Hero Section */}
-      <section
-        className="w-full h-screen max-h-[32rem] p-5 md:p-24 relative overflow-hidden
-          bg-[url('/hero.webp')] bg-cover bg-no-repeat bg-center"
-      >
-        {/* Gradient Overlay */}
-        <div className='absolute inset-0 bg-gradient-to-b from-black/0 to-black/80'></div>
+      <section className="relative w-full h-[70vh] min-h-[500px] overflow-hidden group">
+        {/* Background Image with subtle zoom effect */}
+        <motion.div
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          className="absolute inset-0 bg-[url('/hero.webp')] bg-cover bg-center"
+        />
+
+        {/* Sophisticated Overlay - Linear to the left for text legibility */}
+        <div className='absolute inset-0 bg-gradient-to-r from-black/70 via-black/20 to-transparent'></div>
 
         {/* Text Content */}
-        <div className='h-full max-w-[90%] md:max-w-[50%] md:m-0 m-auto py-10 flex flex-col justify-end md:justify-between relative z-10'>
-          <motion.h1
-            initial={{ y: 50, opacity: 0 }}
-            whileInView={{
-              y: 0,
-              opacity: 1,
-              transition: { duration: 0.6, ease: 'easeOut' }
-            }}
-            viewport={{ once: true }}
-            className='md:text-5xl text-4xl text-white font-bold'
-          >
-            กำลังมองหาแบตเตอรี่รถยนต์อยู่ใช่ไหม?
-          </motion.h1>
+        <div className='relative z-10 h-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col justify-center'>
+          <div className='max-w-2xl'>
+            <motion.span
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              className="text-white/70 uppercase tracking-widest text-xs font-medium mb-4 block"
+            >
+              Premium Battery Service
+            </motion.span>
 
-          <motion.h2
-            initial={{ y: 30, opacity: 0 }}
-            whileInView={{
-              y: 0,
-              opacity: 1,
-              transition: { duration: 0.6, ease: 'easeOut', delay: 0.2 }
-            }}
-            viewport={{ once: true }}
-            className='text-white mt-4'
-          >
-            เรามีทีมช่างพร้อมให้คำแนะนำแบตเตอรี่ตรงรุ่นสำหรับรถยนต์
-            และรถยนต์ไฟฟ้า
-            เพื่อให้เหมาะสมกับการใช้งานในชีวิตประจำวัน
-          </motion.h2>
+            <motion.h1
+              initial={{ y: 30, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true }}
+              className='text-4xl md:text-6xl text-white font-bold leading-tight'
+            >
+              กำลังมองหา <br />
+              <span className="text-white">แบตเตอรี่รถยนต์อยู่ใช่ไหม?</span>
+            </motion.h1>
+
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="mt-6 space-y-4"
+            >
+              <p className='text-lg md:text-xl text-white/90 font-light leading-relaxed max-w-lg'>
+                เรามีทีมช่างพร้อมให้คำแนะนำแบตเตอรี่ตรงรุ่นสำหรับรถยนต์ และรถยนต์ไฟฟ้า
+                เพื่อให้เหมาะสมกับการใช้งานในชีวิตประจำวันของคุณ
+              </p>
+
+              <div className="pt-4">
+                <Link href="#contact" className="px-8 py-3 bg-white text-black font-medium rounded-full hover:bg-slate-100 transition-all active:scale-95">
+                  สอบถามปัญหารถยนต์
+                </Link>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
-      <h4 className='font-bold text-4xl pb-3 mt-10 text-[var(--primary)] text-center'>
-        ตัวแทนจำหน่ายแบตเตอรี่รถยนต์
-      </h4>
-      <p className='text-black/80 mb-5 px-4 text-lg mx-auto max-w-[800px] text-center'>
-        ตั้งใจขายแบต จำหน่ายแบตเตอรี่รถยนต์
-        รถยนต์ไฟฟ้า ทางร้านคัดสรรเแบตเตอรี่คุณภาพดีจากแบรนด์ชั้นนำ ได้แก่ GS ,
-        3K , FB , YUASA , VARTA , AMARON , PUMA , DELKOR,FIAMM และอื่น ๆ
-        ที่มีมาตรฐาน บริการติดตั้งแบตเตอรี่นอกสถานที่ กรุงเทพฯและปริมณฑลติดตั้ง
-        โดยช่างมืออาชีพ
-      </p>
+      {/* Intro Section */}
+      <section className='py-20 px-6 bg-slate-50/50'>
+        <div className='max-w-4xl mx-auto text-center'>
+          <motion.h4
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className='text-xs uppercase tracking-[0.3em] text-slate-400 font-bold mb-4'
+          >
+            Official Dealer
+          </motion.h4>
+
+          <h2 className='font-bold text-3xl md:text-4xl mb-8 text-slate-900 tracking-tight'>
+            ตัวแทนจำหน่ายแบตเตอรี่รถยนต์ชั้นนำ
+          </h2>
+
+          <div className='relative'>
+            <span className='absolute -top-6 left-1/2 -translate-x-1/2 text-6xl text-slate-200/50 font-serif opacity-50'>"</span>
+            <p className='text-slate-600 leading-relaxed text-lg md:text-xl font-light italic'>
+              ตั้งใจขายแบต จำหน่ายแบตเตอรี่รถยนต์และรถยนต์ไฟฟ้า ทางร้านคัดสรรแบตเตอรี่คุณภาพดีจากแบรนด์ชั้นนำ
+              <span className="text-slate-900 font-medium"> GS, 3K, FB, YUASA, VARTA, AMARON, PUMA, DELKOR, FIAMM</span> และอื่น ๆ
+              พร้อมบริการติดตั้งโดยช่างมืออาชีพถึงที่ ทั้งในกรุงเทพฯ และปริมณฑล
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Brand Logos Section */}
       <section className='max-w-7xl mx-auto px-4 md:justify-between flex gap-4 py-10 justify-center items-center flex-wrap'>
@@ -145,31 +176,67 @@ export default function Home () {
       </section>
 
       {/* service */}
-      <section className='w-full gap-4 px-4 max-w-7xl mx-auto mt-10'>
-        <h3 id='ourservice' className='text-4xl'>
-          บริการของเรา
-        </h3>
-
-        <div className='flex md:flex-row flex-col md:gap-4 gap-2 my-3'>
-          <div className='rounded-full w-fit bg-black/80 text-yellow-500 px-6 py-2'>
-            บริการติดตั้งแบตเตอรี่ทั้งในและนอกสถานที่
+      <section id='ourservice' className='max-w-7xl mx-auto px-6 py-20 border-t border-slate-100'>
+        <div className='flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12'>
+          <div>
+            <span className='text-[var(--primary)] font-bold tracking-widest text-xs uppercase block mb-2'>
+              Our Expertise
+            </span>
+            <h3 className='text-4xl md:text-5xl font-bold text-slate-900'>
+              บริการของเรา
+            </h3>
           </div>
-          <div className='rounded-full w-fit bg-black/80 text-yellow-500 px-6 py-2'>
-            บริการตรวจเช็คสุขภาพแบตเตอรี่รถยนต์ / รถยนต์ไฟฟ้า
-          </div>
-          <div className='rounded-full w-fit bg-black/80 text-yellow-500 px-6 py-2'>
-            บริการโปรแกรมลงทะเบียนแบตเตอรี่สำหรับรถยุโรป
-          </div>
+          <p className='text-slate-500 md:max-w-sm text-sm leading-relaxed'>
+            ดูแลรถของคุณด้วยมาตรฐานมืออาชีพ ครอบคลุมทั้งรถยนต์สันดาปและรถยนต์ไฟฟ้า (EV)
+          </p>
         </div>
 
-        <p className='text-black/80 md:max-w-[550px] my-5 space-y-1'>
-          ติดตั้งแบตเตอรี่รถยนต์สันดาป / รถยนต์ไฟฟ้า พื้นที่ให้บริการกรุงเทพฯ
-          และจังหวัดสมุทรสาคร ติดตั้งนอกสถานที่ฟรี**
-          <br />
-          ติดตั้งแบตเตอรี่รถยนต์ยุโรป พื้นที่ให้บริการ กรุงเทพฯ และปริมณฑล
-          (นอกเหนือจากนี้สามารถโทรสอบถามได้ครับ)
-          โปรแกรมลงทะเบียนแบตเตอรี่ลูกใหม่สำหรับรถยุโรปฟรี**
-        </p>
+        {/* Service Grid */}
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
+          {[
+            "บริการติดตั้งแบตเตอรี่ทั้งในและนอกสถานที่",
+            "ตรวจเช็คสุขภาพแบตเตอรี่รถยนต์ / EV",
+            "โปรแกรมลงทะเบียนแบตเตอรี่สำหรับรถยุโรป"
+          ].map((service, i) => (
+            <div
+              key={i}
+              className='group p-8 rounded-2xl bg-slate-50 border border-transparent hover:border-slate-200 hover:bg-white transition-all duration-300'
+            >
+              <div className='size-10 rounded-full bg-black text-white flex items-center justify-center mb-6 group-hover:scale-110 transition-transform'>
+                <CheckCircle2 size={20} className="text-yellow-400" />
+              </div>
+              <p className='text-lg font-medium text-slate-900 leading-snug'>
+                {service}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Service Policy Detail */}
+        <div className='mt-12 p-8 rounded-2xl border border-slate-100 bg-white shadow-sm flex flex-col md:flex-row gap-8 items-center'>
+          <div className='flex-1 space-y-4'>
+            <div className='flex items-start gap-3'>
+              <div className='w-1 h-6 bg-yellow-400 rounded-full mt-1' />
+              <p className='text-slate-600 leading-relaxed'>
+                ติดตั้งแบตเตอรี่รถยนต์สันดาป / รถยนต์ไฟฟ้า พื้นที่ให้บริการ
+                <span className='text-slate-900 font-semibold'> กรุงเทพฯ และจังหวัดสมุทรสาคร</span>
+                <span className='ml-2 inline-block px-2 py-0.5 bg-green-100 text-green-700 text-xs rounded'>ติดตั้งนอกสถานที่ฟรี*</span>
+              </p>
+            </div>
+            <div className='flex items-start gap-3'>
+              <div className='w-1 h-6 bg-slate-200 rounded-full mt-1' />
+              <p className='text-slate-600 leading-relaxed'>
+                ติดตั้งแบตเตอรี่รถยนต์ยุโรป พื้นที่ให้บริการกรุงเทพฯ และปริมณฑล
+                พร้อมโปรแกรมลงทะเบียนแบตเตอรี่ลูกใหม่ <span className='underline decoration-yellow-400 underline-offset-4'>ฟรีทุกเคส</span>
+              </p>
+            </div>
+          </div>
+          <div className='w-full md:w-auto'>
+            <Link href="#contact" className='w-full md:w-auto px-8 py-4 bg-slate-900 text-white rounded-xl font-medium hover:bg-black transition-colors'>
+              สอบถามพื้นที่ให้บริการ
+            </Link>
+          </div>
+        </div>
       </section>
 
       {/* <section className='w-full gap-4 px-4 max-w-7xl mx-auto '>
@@ -219,9 +286,8 @@ export default function Home () {
               className='grid gap-3 justify-items-center justify-center text-center max-w-[250px]'
             >
               <div
-                className={`rounded-xl size-[90px] ${
-                  i == 1 ? 'bg-[var(--primary)]' : 'bg-gray-50'
-                } shadow-lg p-4 flex justify-center items-center`}
+                className={`rounded-xl size-[90px] ${i == 1 ? 'bg-[var(--primary)]' : 'bg-gray-50'
+                  } shadow-lg p-4 flex justify-center items-center`}
               >
                 {step.icon}
               </div>
@@ -360,6 +426,105 @@ export default function Home () {
           ></iframe>
         </div>
       </section>
+
+      <section id="contact" className="w-full py-24 bg-white border-t border-slate-100">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          
+          {/* Left Side: Editorial Text */}
+          <div className="space-y-8">
+            <div>
+              <motion.span 
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                className="text-[var(--primary)] font-bold tracking-[0.2em] text-xs uppercase block mb-4"
+              >
+                Get in Touch
+              </motion.span>
+              <h2 className="text-5xl md:text-6xl font-bold text-slate-900 leading-tight">
+                พร้อมดูแลคุณ <br />
+                <span className="text-slate-400 font-light">ตลอดเวลาที่ต้องการ</span>
+              </h2>
+            </div>
+            
+            <p className="text-slate-500 text-lg leading-relaxed max-w-md font-light">
+              ทีมงาน "ตั้งใจขายแบต" พร้อมให้บริการปรึกษาและติดตั้งแบตเตอรี่ด่วน 
+              ครอบคลุมพื้นที่กรุงเทพฯ และปริมณฑล มั่นใจได้ในคุณภาพและราคา
+            </p>
+
+            <div className="space-y-6 pt-4">
+              <div className="flex items-center gap-4 group">
+                <div className="size-12 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-[var(--primary)] group-hover:text-white transition-colors">
+                  <Clock size={20} />
+                </div>
+                <div>
+                  <p className="text-xs text-slate-400 uppercase tracking-wider font-bold">Service Hours</p>
+                  <p className="text-slate-900 font-medium">เปิดบริการทุกวัน (โทรสอบถามเวลาให้บริการ)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Side: Contact Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            
+            {/* Call Card */}
+            <a 
+              href="tel:+66994922889" 
+              className="p-8 rounded-3xl bg-slate-900 text-white flex flex-col justify-between aspect-square group transition-transform hover:scale-[1.02]"
+            >
+              <div className="flex justify-between items-start">
+                <div className="size-12 rounded-2xl bg-white/10 flex items-center justify-center">
+                  <Phone size={24} />
+                </div>
+                <ArrowUpRight className="text-white/30 group-hover:text-white transition-colors" />
+              </div>
+              <div>
+                <p className="text-white/50 text-sm mb-1">สายด่วนโทรเลย</p>
+                <h3 className="text-2xl font-bold italic">099-492-2889</h3>
+              </div>
+            </a>
+
+            {/* Line Card */}
+            <a 
+              href="https://line.me/R/ti/p/@318evmbw" 
+              className="p-8 rounded-3xl bg-[#06C755] text-white flex flex-col justify-between aspect-square group transition-transform hover:scale-[1.02]"
+            >
+              <div className="flex justify-between items-start">
+                <div className="size-12 rounded-2xl bg-white/10 flex items-center justify-center font-bold text-2xl">
+                  L
+                </div>
+                <ArrowUpRight className="text-white/30 group-hover:text-white transition-colors" />
+              </div>
+              <div>
+                <p className="text-white/70 text-sm mb-1">แชทสอบถามทาง Line</p>
+                <h3 className="text-2xl font-bold italic">ID: @tjbatt</h3>
+              </div>
+            </a>
+
+            {/* Address Card (Spans 2 columns on small screens) */}
+            <div className="sm:col-span-2 p-8 rounded-3xl bg-slate-50 border border-slate-100 flex flex-col md:flex-row gap-6 justify-between items-start md:items-center">
+              <div className="flex gap-5 items-start">
+                <div className="size-12 rounded-2xl bg-white shadow-sm flex items-center justify-center text-slate-400 shrink-0">
+                  <MapPin size={24} />
+                </div>
+                <div>
+                  <h4 className="font-bold text-slate-900">หน้าร้านของเรา</h4>
+                  <p className="text-slate-500 text-sm leading-relaxed max-w-xs">
+                    44 ซอยพระราม 2 62 แขวงแสมดำ เขตบางขุนเทียน กรุงเทพฯ 10150
+                  </p>
+                </div>
+              </div>
+              <button className="px-6 py-3 bg-white border border-slate-200 rounded-full text-sm font-medium hover:bg-slate-900 hover:text-white transition-all">
+                ดูแผนที่ Google Maps
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
     </main>
   )
 }

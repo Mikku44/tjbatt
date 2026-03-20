@@ -7,6 +7,7 @@ import {
   GalleryImageName
 } from '../constants/app'
 import * as motion from 'motion/react-client'
+import GallerySection from '../components/gallerySection'
 
 export const metadata: Metadata = {
   title: 'ตั้งใจขายแบต – แบตเตอรี่รถยนต์ไฟฟ้า (EV Battery) | อัลบั้มรถไฟฟ้า',
@@ -123,6 +124,8 @@ export default function page () {
         >
           นี้คือส่วนหนึ่งจากรถไฟฟ้า
         </h3>
+
+        {/* <GallerySection /> */}
 
         {/* <MyGallery /> */}
         <section className='my-10 space-y-8'>

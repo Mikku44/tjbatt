@@ -79,7 +79,7 @@ export default function Footer() {
             </Link> */}
           </div>
           <p className="text-sm sm:text-base text-center md:text-left">
-            ตั้งใจขายแบต สงวนลิขสิทธิ์ 2025 ©
+            ตั้งใจขายแบต สงวนลิขสิทธิ์ 2026 ©
           </p>
         </div>
       </section>
