@@ -152,8 +152,18 @@ export const GalleryImageName = [
     alt: 'เปลี่ยนแบตเตอรี่ Porsche Cayenne Hybrid '
   },
   {
+    path: '/raw/images-tj/panamera4s (indx).jpg',
+    count: 3,
+    alt: 'เปลี่ยนแบตเตอรี่ Porsche Panamera 4s'
+  },
+  {
+    path: '/raw/images-tj/volvo_xc40 (indx).jpg',
+    count: 3,
+    alt: 'เปลี่ยนแบตเตอรี่ Volvo XC40'
+  },
+  {
     path: '/raw/images-tj/evcar (indx).jpg',
-    count: 19,
+    count: 22,
     alt: 'เปลี่ยนแบตเตอรี่ รถไฟฟ้า (EV)'
   }
 ]
