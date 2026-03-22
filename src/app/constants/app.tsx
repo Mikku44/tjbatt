@@ -91,7 +91,33 @@ export const EVTags: string[] = [
   '#เปลี่ยนแบตevนอกสถานที่',
   '#แบตเตอรี่สำรองev',
   '#batterydelivery',
-  '#evthailand'
+  '#evthailand',
+  "#byd",
+  "#bydatto3",
+  "#byddolphin",
+  "#bydm6",
+  "#bydatto1",
+  "#bydatto2",
+  "#omodac5",
+  "#aiony",
+  "#aionyplus",
+  "#aionv",
+  "#oragoodcat",
+  "#ora07",
+  "#gwm",
+  "#mg4ev",
+  "#mgep",
+  "#mgzsev",
+  "#netav",
+  "#netax",
+  "#jaecoo6ev",
+  "#jaecoo5ev",
+  "#jaecooj7",
+  "#xpengg6",
+  "#xpengx9",
+  "#zeekr7x",
+  "#zeekrx",
+  "#zeek009"
 ]
 
 export const GalleryImage = ['/raw/images-tj/benzc220 (1).jpg']
@@ -175,7 +201,7 @@ interface GalleryImage {
   alt: string
 }
 
-export function galleryGenerator (limit = 5): { src: string; alt: string }[] {
+export function galleryGenerator(limit = 5): { src: string; alt: string }[] {
   const allImagePaths = GalleryImageName.reduce<{ src: string; alt: string }[]>(
     (accumulator, image) => {
       const indices = Array.from({ length: image.count }, (_, i) => i + 1)
@@ -193,7 +219,7 @@ export function galleryGenerator (limit = 5): { src: string; alt: string }[] {
   return allImagePaths.slice(0, limit)
 }
 
-export function galleryGeneratorWithPath (image: {
+export function galleryGeneratorWithPath(image: {
   path: string
   alt: string
   count: number
@@ -218,7 +244,7 @@ interface GroupedGallery {
   images: string[]
 }
 
-export function groupGalleryByAlt (items: GalleryImageItem[]): GroupedGallery[] {
+export function groupGalleryByAlt(items: GalleryImageItem[]): GroupedGallery[] {
   const grouped: Record<string, string[]> = {}
 
   for (const item of items) {
@@ -235,7 +261,7 @@ export function groupGalleryByAlt (items: GalleryImageItem[]): GroupedGallery[] 
   }))
 }
 
-export function getImageNameFromPath (path: string) {
+export function getImageNameFromPath(path: string) {
   const result = path.split('/').at(-1) ?? ''
   return result
 }

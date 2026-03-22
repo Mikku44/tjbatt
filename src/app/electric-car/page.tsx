@@ -106,7 +106,7 @@ export default function page () {
           <b>รถไฟฟ้า (EV)</b> คืออนาคตของการเดินทาง
           ที่ขับเคลื่อนด้วยพลังงานไฟฟ้าเต็มรูปแบบ ปราศจากการปล่อยไอเสีย
           และมีระบบเทคโนโลยีล้ำสมัย ไม่ว่าจะเป็น AION , Deepal , NETA , GWM ,
-          JAECOO , LUMIN , MG , SLEEK , XPENG , ZEEKR ,Tesla , BYD , BMW i
+          JAECOO , LUMIN , MG , XPENG , ZEEKR ,Tesla , BYD , BMW i
           Series , Mercedes EQ รถไฟฟ้ามีระบบไฟฟ้าแรงดันสูงและแบตเตอรี่ 12 Volt
           ที่ต้องการการดูแลเฉพาะทาง
           <br />
